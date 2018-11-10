@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/game-scorecards/static/js/runtime~main.d076c119.js"
   },
   {
-    "revision": "69c3c352583929cdbd49",
-    "url": "/game-scorecards/static/js/main.69c3c352.chunk.js"
+    "revision": "0cbbd6caacde5eca1dc6",
+    "url": "/game-scorecards/static/js/main.0cbbd6ca.chunk.js"
   },
   {
     "revision": "1a2fe23bbee4e72efb16",
     "url": "/game-scorecards/static/js/1.1a2fe23b.chunk.js"
   },
   {
-    "revision": "69c3c352583929cdbd49",
+    "revision": "0cbbd6caacde5eca1dc6",
     "url": "/game-scorecards/static/css/main.d4218ee2.chunk.css"
   },
   {
-    "revision": "e54e62cb04ffdbc98896fe3731697e4b",
+    "revision": "f8efaecad340278aabc2e117d7b7b0d8",
     "url": "/game-scorecards/index.html"
   }
 ];

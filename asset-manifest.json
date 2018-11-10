@@ -1,7 +1,7 @@
 {
   "main.css": "/game-scorecards/static/css/main.d4218ee2.chunk.css",
-  "main.js": "/game-scorecards/static/js/main.69c3c352.chunk.js",
-  "main.js.map": "/game-scorecards/static/js/main.69c3c352.chunk.js.map",
+  "main.js": "/game-scorecards/static/js/main.0cbbd6ca.chunk.js",
+  "main.js.map": "/game-scorecards/static/js/main.0cbbd6ca.chunk.js.map",
   "static/js/1.1a2fe23b.chunk.js": "/game-scorecards/static/js/1.1a2fe23b.chunk.js",
   "static/js/1.1a2fe23b.chunk.js.map": "/game-scorecards/static/js/1.1a2fe23b.chunk.js.map",
   "runtime~main.js": "/game-scorecards/static/js/runtime~main.d076c119.js",
@@ -9,6 +9,6 @@
   "static/media/logo.svg": "/game-scorecards/static/media/logo.5d5d9eef.svg",
   "static/css/main.d4218ee2.chunk.css.map": "/game-scorecards/static/css/main.d4218ee2.chunk.css.map",
   "index.html": "/game-scorecards/index.html",
-  "precache-manifest.703e6b5ce40ccdaa6ebf68bda5cc7cb4.js": "/game-scorecards/precache-manifest.703e6b5ce40ccdaa6ebf68bda5cc7cb4.js",
+  "precache-manifest.6f45bb9c21703bb92ee00aa9605df53a.js": "/game-scorecards/precache-manifest.6f45bb9c21703bb92ee00aa9605df53a.js",
   "service-worker.js": "/game-scorecards/service-worker.js"
 }
