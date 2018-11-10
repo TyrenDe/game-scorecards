@@ -1,7 +1,12 @@
 import * as React from "react";
+import BasePage from "./BasePage";
 import "./App.css";
 
-class About extends React.Component {
+class About extends BasePage {
+  public getPageName(): string {
+    return "About";
+  }
+
   render() {
     return (
       <div>

@@ -1,7 +1,12 @@
 import * as React from "react";
+import BasePage from "./BasePage";
 import "./App.css";
 
-class Home extends React.Component {
+class Home extends BasePage {
+  public getPageName(): string {
+    return "Home";
+  }
+
   render() {
     return (
       <div>
