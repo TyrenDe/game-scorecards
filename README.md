@@ -10,3 +10,5 @@ To run the project locally, clone then run:
 
 To deploy the GitHub Page to: https://tyrende.github.io/game-scorecards/
  * npm run deploy
+
+Note: It may take up to a minute for the changes to appear after publishing.
