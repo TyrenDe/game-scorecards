@@ -1,9 +1,11 @@
 {
   "name": "game-scorecards",
-  "homepage": "http://tyrende.github.io/game-scorecards",
+  "homepage": "https://tyrende.github.io/game-scorecards/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/react": "^16.7.2",
+    "@types/react-dom": "^16.0.9",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
     "react-scripts": "2.1.1"
@@ -26,6 +28,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "awesome-typescript-loader": "^5.2.1",
+    "gh-pages": "^2.0.1",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.1.6"
   }
 }
