@@ -1,15 +1,15 @@
 import * as React from "react";
+import Header from "./Header";
+import Main from "./Main";
+
 import "./App.css";
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Stay tuned!?
-          </p>
-        </header>
+      <div>
+        <Header />
+        <Main />
       </div>
     );
   }
