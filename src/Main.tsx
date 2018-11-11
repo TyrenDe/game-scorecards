@@ -1,10 +1,8 @@
 import * as React from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./Home";
-import Split from "./Split";
+import Split from "./Split/Split";
 import About from "./About";
-
-import "./App.css";
 
 class Main extends React.Component {
   render() {

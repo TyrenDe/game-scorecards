@@ -1,6 +1,5 @@
 import * as React from "react";
 import BasePage from "./BasePage";
-import "./App.css";
 
 class About extends BasePage {
   public getPageName(): string {
@@ -10,7 +9,7 @@ class About extends BasePage {
   render() {
     return (
       <div>
-        About the site!
+        This site was created by Shane DeSerannoa and Donald Gill to aid in game scoring.
       </div>
     );
   }

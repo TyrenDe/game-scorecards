@@ -1,6 +1,8 @@
 import * as React from "react";
-import BasePage from "./BasePage";
-import "./App.css";
+import BasePage from "../BasePage";
+import SplitBoard from "./SplitBoard";
+
+import "./Split.css";
 
 class Split extends BasePage {
   public getPageName(): string {
@@ -9,9 +11,7 @@ class Split extends BasePage {
 
   render() {
     return (
-      <div>
-        Split!!!!
-      </div>
+      <SplitBoard/>
     );
   }
 };

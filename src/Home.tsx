@@ -1,6 +1,5 @@
 import * as React from "react";
 import BasePage from "./BasePage";
-import "./App.css";
 
 class Home extends BasePage {
   public getPageName(): string {
@@ -10,7 +9,7 @@ class Home extends BasePage {
   render() {
     return (
       <div>
-        HOME PAGE!
+        <p>This is the home page where we provide useful details.</p>
       </div>
     );
   }
