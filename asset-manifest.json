@@ -1,13 +1,13 @@
 {
-  "main.css": "/game-scorecards/static/css/main.50f7ff64.chunk.css",
-  "main.js": "/game-scorecards/static/js/main.cb989d3c.chunk.js",
-  "main.js.map": "/game-scorecards/static/js/main.cb989d3c.chunk.js.map",
-  "static/js/1.65f47c61.chunk.js": "/game-scorecards/static/js/1.65f47c61.chunk.js",
-  "static/js/1.65f47c61.chunk.js.map": "/game-scorecards/static/js/1.65f47c61.chunk.js.map",
+  "main.css": "/game-scorecards/static/css/main.9b9046d6.chunk.css",
+  "main.js": "/game-scorecards/static/js/main.03878685.chunk.js",
+  "main.js.map": "/game-scorecards/static/js/main.03878685.chunk.js.map",
+  "static/js/1.0efadad5.chunk.js": "/game-scorecards/static/js/1.0efadad5.chunk.js",
+  "static/js/1.0efadad5.chunk.js.map": "/game-scorecards/static/js/1.0efadad5.chunk.js.map",
   "runtime~main.js": "/game-scorecards/static/js/runtime~main.d076c119.js",
   "runtime~main.js.map": "/game-scorecards/static/js/runtime~main.d076c119.js.map",
-  "static/css/main.50f7ff64.chunk.css.map": "/game-scorecards/static/css/main.50f7ff64.chunk.css.map",
+  "static/css/main.9b9046d6.chunk.css.map": "/game-scorecards/static/css/main.9b9046d6.chunk.css.map",
   "index.html": "/game-scorecards/index.html",
-  "precache-manifest.4eba3a23228eb8bbdd3d3acb98317366.js": "/game-scorecards/precache-manifest.4eba3a23228eb8bbdd3d3acb98317366.js",
+  "precache-manifest.6be8bd3c44ab9a6560abcdee65a9c3df.js": "/game-scorecards/precache-manifest.6be8bd3c44ab9a6560abcdee65a9c3df.js",
   "service-worker.js": "/game-scorecards/service-worker.js"
 }
