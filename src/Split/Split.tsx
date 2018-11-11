@@ -14,6 +14,6 @@ class Split extends BasePage {
       <SplitBoard/>
     );
   }
-};
+}
 
 export default Split;

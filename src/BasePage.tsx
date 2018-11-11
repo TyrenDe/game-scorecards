@@ -6,6 +6,6 @@ abstract class BasePage<P = {}, S = {}, SS = any> extends React.Component<P, S, 
   componentDidMount() {
     document.title="Game Scorecards: " + this.getPageName();
   }
-};
+}
 
 export default BasePage;

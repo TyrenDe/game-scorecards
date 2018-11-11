@@ -13,6 +13,6 @@ class Home extends BasePage {
       </div>
     );
   }
-};
+}
 
 export default Home;
