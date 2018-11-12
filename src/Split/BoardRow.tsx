@@ -42,58 +42,50 @@ const Square = styled.div`
   }
 `;
 
+const SelectedSquare = styled(Square)`
+  background: ${ (props: IStorecardThemeProps) => props.theme!.PrimaryBackgroundColor };
+  color: ${ (props: IStorecardThemeProps) => props.theme!.PrimaryColor };
+  border: 1px dashed ${ (props: IStorecardThemeProps) => props.theme!.PrimaryColor };
+`;
+
 interface IRowProp {
   rank: CardRank;
-}
-
-interface IRowState {
+  values: number[];
   selected: number;
+  onClick(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-class BoardRow extends React.Component<IRowProp, IRowState> {
+class BoardRow extends React.Component<IRowProp> {
   constructor(props: IRowProp) {
     super(props);
-
-    this.state = {
-      selected: 0,
-    };
   }
 
-  public static getRankValues(rank: CardRank): number[] {
-    switch (rank) {
-      case CardRank.Ace: return [0, 30, 70, 120, 180, 200];
-      case CardRank.King:
-      case CardRank.Queen:
-      case CardRank.Jack:
-        return [0, 20, 50, 90, 140, 200];
-      case CardRank.Ten:
-      case CardRank.Nine:
-      case CardRank.Eight:
-      case CardRank.Seven:
-      case CardRank.Six:
-      case CardRank.Five:
-      case CardRank.Four:
-      case CardRank.Three:
-        return [0, 10, 30, 60, 100, 200];
-      case CardRank.Two: return [0, 5, 20, 40, 70, 200];
-      default: return [];
+  private handleClick(event: React.MouseEvent<HTMLButtonElement>): void {
+    this.props.onClick(event);
+  }
+
+  renderValue(index: number) {
+    if (this.props.selected == index) {
+      return (
+        <SelectedSquare>{this.props.values[index]}</SelectedSquare>
+      );
+    }
+    else {
+      return (
+        <Square>{this.props.values[index]}</Square>
+      );
     }
   }
 
-  private addOne() {
-    this.setState({ selected: (this.state.selected + 1) % 6 });
-  }
-
   render() {
-    let values = BoardRow.getRankValues(this.props.rank);
     return (<div className="splitRow">
-      <SquareHeader onClick={() => { this.addOne(); }}>{this.props.rank}</SquareHeader>
-      <Square>{values[0]}</Square>
-      <Square>{values[1]}</Square>
-      <Square>{values[2]}</Square>
-      <Square>{values[3]}</Square>
-      <Square>{values[4]}</Square>
-      <Square>{values[5]}</Square>
+      <SquareHeader onClick={(event) => { this.handleClick(event); }}>{this.props.rank}</SquareHeader>
+      {this.renderValue(0)}
+      {this.renderValue(1)}
+      {this.renderValue(2)}
+      {this.renderValue(3)}
+      {this.renderValue(4)}
+      {this.renderValue(5)}
     </div>);
   }
 }
