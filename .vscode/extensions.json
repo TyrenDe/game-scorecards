@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "aeschli.vscode-css-formatter",
+    "eg2.tslint"
+  ],
+  "unwantedRecommendations": []
+}
