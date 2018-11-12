@@ -1,13 +1,12 @@
 import * as React from "react";
-import styled from "styled-components";
 
-import { IStorecardThemeProps } from "../Theme";
+import styled from "../Theme";
 import { CardRank } from "./CardRank";
 
 const SquareHeader = styled.button`
-  background: ${ (props: IStorecardThemeProps) => props.theme!.SecondaryBackgroundColor };
-  color: ${ (props: IStorecardThemeProps) => props.theme!.PrimaryColor };
-  border: 1px solid ${ (props: IStorecardThemeProps) => props.theme!.InverseBackgroundColor };
+  background: ${ props => props.theme.SecondaryBackgroundColor };
+  color: ${ props => props.theme.PrimaryColor };
+  border: 1px solid ${ props => props.theme.InverseBackgroundColor };
   float: left;
   font-size: 24px;
   font-weight: bold;
@@ -21,8 +20,8 @@ const SquareHeader = styled.button`
 `;
 
 const Square = styled.div`
-  background: ${ (props: IStorecardThemeProps) => props.theme!.InverseBackgroundColor };
-  border: 1px solid ${ (props: IStorecardThemeProps) => props.theme!.SecondaryBackgroundColor };
+  background: ${ props => props.theme.InverseBackgroundColor };
+  border: 1px solid ${ props => props.theme.SecondaryBackgroundColor };
   float: left;
   font-size: 24px;
   font-weight: bold;
@@ -33,7 +32,7 @@ const Square = styled.div`
   padding: 0;
   text-align: center;
   width: 55px;
-  color: ${ (props: IStorecardThemeProps) => props.theme!.InverseColor };
+  color: ${ props => props.theme.InverseColor };
 
   ::after {
     clear: both;
@@ -43,9 +42,9 @@ const Square = styled.div`
 `;
 
 const SelectedSquare = styled(Square)`
-  background: ${ (props: IStorecardThemeProps) => props.theme!.PrimaryBackgroundColor };
-  color: ${ (props: IStorecardThemeProps) => props.theme!.PrimaryColor };
-  border: 1px dashed ${ (props: IStorecardThemeProps) => props.theme!.PrimaryColor };
+  background: ${ props => props.theme.PrimaryBackgroundColor };
+  color: ${ props => props.theme.PrimaryColor };
+  border: 1px dashed ${ props => props.theme.PrimaryColor };
 `;
 
 interface IRowProp {

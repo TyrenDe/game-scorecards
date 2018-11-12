@@ -1,7 +1,6 @@
 import * as React from "react";
 
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-import { DarkTheme, IStorecardThemeProps } from "./Theme";
+import { createGlobalStyle, DarkTheme, LightTheme, ThemeProvider } from "./Theme";
 import Header from "./Header";
 import Main from "./Main";
 
@@ -12,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: ${ (props: IStorecardThemeProps) => props.theme!.PrimaryBackgroundColor };
+    background-color: ${ props => props.theme.PrimaryBackgroundColor };
   }
 
   nav ul {
@@ -27,11 +26,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a, a:visited {
-    color: ${ (props: IStorecardThemeProps) => props.theme!.LinkColor };
+    color: ${ props => props.theme.LinkColor };
   }
 
   a:hover {
-    color: ${ (props: IStorecardThemeProps) => props.theme!.LinkHoverColor };
+    color: ${ props => props.theme.LinkHoverColor };
   }
 `;
 

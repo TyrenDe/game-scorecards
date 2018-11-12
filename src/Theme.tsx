@@ -1,4 +1,7 @@
-export interface IScorecardTheme {
+import * as styledComponents from "styled-components";
+import { ThemedStyledComponentsModule } from "styled-components";
+
+interface IScorecardTheme {
   readonly PrimaryBackgroundColor: string;
   readonly SecondaryBackgroundColor: string;
   readonly InverseBackgroundColor: string;
@@ -6,10 +9,6 @@ export interface IScorecardTheme {
   readonly InverseColor: string;
   readonly LinkColor: string;
   readonly LinkHoverColor: string;
-}
-
-export interface IStorecardThemeProps {
-  readonly theme?: IScorecardTheme;
 }
 
 export const DarkTheme: IScorecardTheme = {
@@ -23,3 +22,26 @@ export const DarkTheme: IScorecardTheme = {
   LinkColor: "#61dafb",
   LinkHoverColor: "#acf1ff",
 }
+
+export const LightTheme: IScorecardTheme = {
+  PrimaryBackgroundColor: "#CEC9C1",
+  SecondaryBackgroundColor: "#EEE9E1",
+  InverseBackgroundColor: "#41464e",
+  
+  PrimaryColor: "black",
+  InverseColor: "black",
+  
+  LinkColor: "#219acb",
+  LinkHoverColor: "#1156aa",
+}
+
+const {
+  default: styled,
+  css,
+  createGlobalStyle,
+  keyframes,
+  ThemeProvider
+} = styledComponents as ThemedStyledComponentsModule<IScorecardTheme>;
+
+export { css, createGlobalStyle, keyframes, ThemeProvider };
+export default styled;

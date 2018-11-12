@@ -1,6 +1,6 @@
 import * as React from "react";
-import styled from "styled-components";
 
+import styled from "../Theme";
 import CardRank from "./CardRank";
 import BoardRow from "./BoardRow";
 
@@ -8,6 +8,7 @@ type CardRankMap = {[TKey in CardRank]: number};
 
 const ScoreHeader = styled.div`
   width: ${55 * 7}px;
+  margin-bottom: 10px;
 
    ::after {
     clear: both;

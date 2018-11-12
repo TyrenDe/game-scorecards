@@ -1,4 +1,5 @@
 import * as React from "react";
+
 import BasePage from "./BasePage";
 
 class Home extends BasePage {

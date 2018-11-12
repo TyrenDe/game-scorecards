@@ -1,8 +1,7 @@
 import * as React from "react";
 import { Switch, Route } from "react-router-dom";
-import styled from "styled-components";
 
-import { IStorecardThemeProps } from "./Theme";
+import styled from "./Theme";
 import Home from "./Home";
 import Split from "./Split/Split";
 import About from "./About";
@@ -14,7 +13,7 @@ const MainWindow = styled.div`
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 1vmin);
-  color: ${ (props: IStorecardThemeProps) => props.theme!.PrimaryColor };
+  color: ${ props => props.theme.PrimaryColor };
   padding: 5px;
 `;
 
