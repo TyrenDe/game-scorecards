@@ -1,5 +1,46 @@
 import * as React from "react";
+import styled from "styled-components";
+
+import * as Theme from "../Theme";
 import { CardRank } from "./CardRank";
+
+const SquareHeader = styled.button`
+  background: ${ Theme.SecondaryBackgroundColor };
+  color: ${ Theme.PrimaryColor };
+  border: 1px solid ${ Theme.InverseBackgroundColor };
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 55px;
+`;
+
+const Square = styled.div`
+  background: ${ Theme.InverseBackgroundColor };
+  border: 1px solid ${ Theme.SecondaryBackgroundColor };
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 55px;
+  color: ${ Theme.InverseColor };
+
+  ::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+`;
 
 interface IRowProp {
   rank: CardRank;
@@ -60,13 +101,13 @@ class BoardRow extends React.Component<IRowProp, IRowState> {
   render() {
     let values = this.getRankValues();
     return (<div className="splitRow">
-      <button className="splitSquareHeader" onClick={() => { this.setState({ selected: 0 }); }}>{this.getRankString()}</button>
-      <div className="splitSquare">{values[0]}</div>
-      <div className="splitSquare">{values[1]}</div>
-      <div className="splitSquare">{values[2]}</div>
-      <div className="splitSquare">{values[3]}</div>
-      <div className="splitSquare">{values[4]}</div>
-      <div className="splitSquare">{values[5]}</div>
+      <SquareHeader onClick={() => { this.setState({ selected: 0 }); }}>{this.getRankString()}</SquareHeader>
+      <Square>{values[0]}</Square>
+      <Square>{values[1]}</Square>
+      <Square>{values[2]}</Square>
+      <Square>{values[3]}</Square>
+      <Square>{values[4]}</Square>
+      <Square>{values[5]}</Square>
     </div>);
   }
 }

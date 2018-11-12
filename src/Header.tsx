@@ -1,10 +1,23 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+import * as Theme from "./Theme";
+
+const StyledHeader = styled.div`
+  background-color: ${ Theme.SecondaryBackgroundColor };
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: ${ Theme.PrimaryColor };
+`;
 
 class Header extends React.Component {
   render() {
     return (
-      <header className="App-header">
+      <StyledHeader>
         <nav>
           <ul>
             <li><Link to='/'>Home</Link></li>
@@ -12,7 +25,7 @@ class Header extends React.Component {
             <li><Link to='/about'>About</Link></li>
           </ul>
         </nav>
-      </header>
+      </StyledHeader>
     );
   }
 }
