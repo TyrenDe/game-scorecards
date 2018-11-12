@@ -1,11 +1,15 @@
 export interface IScorecardTheme {
   readonly PrimaryBackgroundColor: string;
-  SecondaryBackgroundColor: string;
-  InverseBackgroundColor: string;
-  PrimaryColor: string;
-  InverseColor: string;
-  LinkColor: string;
-  LinkHoverColor: string;
+  readonly SecondaryBackgroundColor: string;
+  readonly InverseBackgroundColor: string;
+  readonly PrimaryColor: string;
+  readonly InverseColor: string;
+  readonly LinkColor: string;
+  readonly LinkHoverColor: string;
+}
+
+export interface IStorecardThemeProps {
+  readonly theme?: IScorecardTheme;
 }
 
 export const DarkTheme: IScorecardTheme = {
