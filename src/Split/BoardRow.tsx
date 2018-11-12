@@ -1,13 +1,12 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import * as Theme from "../Theme";
 import { CardRank } from "./CardRank";
 
 const SquareHeader = styled.button`
-  background: ${ Theme.SecondaryBackgroundColor };
-  color: ${ Theme.PrimaryColor };
-  border: 1px solid ${ Theme.InverseBackgroundColor };
+  background: ${ props => props.theme.SecondaryBackgroundColor };
+  color: ${ props => props.theme.PrimaryColor };
+  border: 1px solid ${ props => props.theme.InverseBackgroundColor };
   float: left;
   font-size: 24px;
   font-weight: bold;
@@ -21,8 +20,8 @@ const SquareHeader = styled.button`
 `;
 
 const Square = styled.div`
-  background: ${ Theme.InverseBackgroundColor };
-  border: 1px solid ${ Theme.SecondaryBackgroundColor };
+  background: ${ props => props.theme.InverseBackgroundColor };
+  border: 1px solid ${ props => props.theme.SecondaryBackgroundColor };
   float: left;
   font-size: 24px;
   font-weight: bold;
@@ -33,7 +32,7 @@ const Square = styled.div`
   padding: 0;
   text-align: center;
   width: 55px;
-  color: ${ Theme.InverseColor };
+  color: ${ props => props.theme.InverseColor };
 
   ::after {
     clear: both;
@@ -47,38 +46,20 @@ interface IRowProp {
 }
 
 interface IRowState {
-  selected?: number;
+  selected: number;
 }
 
 class BoardRow extends React.Component<IRowProp, IRowState> {
   constructor(props: IRowProp) {
     super(props);
+
     this.state = {
       selected: 0,
     };
   }
 
-  getRankString(): string {
-    switch (this.props.rank) {
-      case CardRank.Ace: return "A";
-      case CardRank.King: return "K";
-      case CardRank.Queen: return "Q";
-      case CardRank.Jack: return "J";
-      case CardRank.Ten: return "10";
-      case CardRank.Nine: return "9";
-      case CardRank.Eight: return "8";
-      case CardRank.Seven: return "7";
-      case CardRank.Six: return "6";
-      case CardRank.Five: return "5";
-      case CardRank.Four: return "4";
-      case CardRank.Three: return "3";
-      case CardRank.Two: return "2";
-      default: return "";
-    }
-  }
-
-  getRankValues(): number[] {
-    switch (this.props.rank) {
+  public static getRankValues(rank: CardRank): number[] {
+    switch (rank) {
       case CardRank.Ace: return [0, 30, 70, 120, 180, 200];
       case CardRank.King:
       case CardRank.Queen:
@@ -98,10 +79,14 @@ class BoardRow extends React.Component<IRowProp, IRowState> {
     }
   }
 
+  private addOne() {
+    this.setState({ selected: (this.state.selected + 1) % 6 });
+  }
+
   render() {
-    let values = this.getRankValues();
+    let values = BoardRow.getRankValues(this.props.rank);
     return (<div className="splitRow">
-      <SquareHeader onClick={() => { this.setState({ selected: 0 }); }}>{this.getRankString()}</SquareHeader>
+      <SquareHeader onClick={() => { this.addOne(); }}>{this.props.rank}</SquareHeader>
       <Square>{values[0]}</Square>
       <Square>{values[1]}</Square>
       <Square>{values[2]}</Square>

@@ -2,8 +2,11 @@ import * as React from "react";
 import CardRank from "./CardRank";
 import BoardRow from "./BoardRow";
 
+type CardRankMap = {[TKey in CardRank]: number};
+
 export interface IBoardState {
   negatives: number,
+  values: CardRankMap,
 }
 
 class Split extends React.Component {
