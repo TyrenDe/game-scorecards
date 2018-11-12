@@ -19,9 +19,9 @@ const SquareHeader = styled.button`
   width: 55px;
 `;
 
-const Square = styled.div`
-  background: ${ props => props.theme.InverseBackgroundColor };
-  border: 1px solid ${ props => props.theme.SecondaryBackgroundColor };
+const Square = styled<{isSelected: boolean}, "div">("div")`
+  background: ${ props => props.isSelected ? props.theme.PrimaryBackgroundColor : props.theme.InverseBackgroundColor };
+  border: 1px solid ${ props => props.isSelected ? props.theme.PrimaryColor : props.theme.SecondaryBackgroundColor };
   float: left;
   font-size: 24px;
   font-weight: bold;
@@ -32,19 +32,13 @@ const Square = styled.div`
   padding: 0;
   text-align: center;
   width: 55px;
-  color: ${ props => props.theme.InverseColor };
+  color: ${ props => props.isSelected ? props.theme.PrimaryColor : props.theme.InverseColor };
 
   ::after {
     clear: both;
     content: "";
     display: table;
   }
-`;
-
-const SelectedSquare = styled(Square)`
-  background: ${ props => props.theme.PrimaryBackgroundColor };
-  color: ${ props => props.theme.PrimaryColor };
-  border: 1px dashed ${ props => props.theme.PrimaryColor };
 `;
 
 interface IRowProp {
@@ -64,16 +58,9 @@ class BoardRow extends React.Component<IRowProp> {
   }
 
   renderValue(index: number) {
-    if (this.props.selected == index) {
-      return (
-        <SelectedSquare>{this.props.values[index]}</SelectedSquare>
-      );
-    }
-    else {
-      return (
-        <Square>{this.props.values[index]}</Square>
-      );
-    }
+    return (
+      <Square isSelected={(this.props.selected == index)}>{this.props.values[index]}</Square>
+    )
   }
 
   render() {
