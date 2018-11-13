@@ -3,6 +3,7 @@ import * as React from "react";
 import styled from "../Theme";
 import CardRank from "./CardRank";
 import BoardRow from "./BoardRow";
+import { throws } from "assert";
 
 type CardRankMap = {[TKey in CardRank]: number};
 
@@ -103,29 +104,8 @@ class Split extends React.Component<{}, IBoardState> {
     );
   }
 
-  private copyState(): IBoardState {
-    return {
-      negatives: this.state.negatives,
-      values: {
-        "A": this.state.values[CardRank.Ace],
-        "K": this.state.values[CardRank.King],
-        "Q": this.state.values[CardRank.Queen],
-        "J": this.state.values[CardRank.Jack],
-        "10": this.state.values[CardRank.Ten],
-        "9": this.state.values[CardRank.Nine],
-        "8": this.state.values[CardRank.Eight],
-        "7": this.state.values[CardRank.Seven],
-        "6": this.state.values[CardRank.Six],
-        "5": this.state.values[CardRank.Five],
-        "4": this.state.values[CardRank.Four],
-        "3": this.state.values[CardRank.Three],
-        "2": this.state.values[CardRank.Two],
-      },
-    };
-  }
-
   private addOne(rank: CardRank) {
-    let newState = this.copyState();
+    let newState = { ...this.state };
 
     newState.values[rank] = (newState.values[rank] + 1) % 6;
 
@@ -133,7 +113,7 @@ class Split extends React.Component<{}, IBoardState> {
   }
 
   private addNegative() {
-    let newState = this.copyState();
+    let newState = { ...this.state };
 
     newState.negatives++;
 
@@ -141,7 +121,7 @@ class Split extends React.Component<{}, IBoardState> {
   }
 
   private subNegative() {
-    let newState = this.copyState();
+    let newState = { ...this.state };
 
     newState.negatives--;
     if (newState.negatives < 0) {
@@ -152,27 +132,29 @@ class Split extends React.Component<{}, IBoardState> {
   }
 
   render() {
+    const allRanks = [
+      CardRank.Ace,
+      CardRank.King,
+      CardRank.Queen,
+      CardRank.Jack,
+      CardRank.Ten,
+      CardRank.Nine,
+      CardRank.Eight,
+      CardRank.Seven,
+      CardRank.Six,
+      CardRank.Five,
+      CardRank.Four,
+      CardRank.Three,
+      CardRank.Two];
     return (
       <div>
         <ScoreHeader>
-          <ScoreButton onClick={() => this.subNegative()}>+5</ScoreButton>
-          <Score>Negative: {this.state.negatives * -5}</Score>
           <ScoreButton onClick={() => this.addNegative()}>-5</ScoreButton>
+          <Score>Negative: {this.state.negatives * -5}</Score>
+          <ScoreButton onClick={() => this.subNegative()}>+5</ScoreButton>
           <ScoreValue>Score: {this.calculateScore()}</ScoreValue>
         </ScoreHeader>
-        { this.renderRow(CardRank.Ace) }
-        { this.renderRow(CardRank.King) }
-        { this.renderRow(CardRank.Queen) }
-        { this.renderRow(CardRank.Jack) }
-        { this.renderRow(CardRank.Ten) }
-        { this.renderRow(CardRank.Nine) }
-        { this.renderRow(CardRank.Eight) }
-        { this.renderRow(CardRank.Seven) }
-        { this.renderRow(CardRank.Six) }
-        { this.renderRow(CardRank.Five) }
-        { this.renderRow(CardRank.Four) }
-        { this.renderRow(CardRank.Three) }
-        { this.renderRow(CardRank.Two) }
+        { allRanks.map((rank) => <BoardRow rank={rank} values={Split.getRankValues(rank)} selected={this.state.values[rank]} onClick={event => { this.addOne(rank); }}/>)}
       </div>
     );
   }

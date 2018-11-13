@@ -57,21 +57,10 @@ class BoardRow extends React.Component<IRowProp> {
     this.props.onClick(event);
   }
 
-  renderValue(index: number) {
-    return (
-      <Square isSelected={(this.props.selected == index)}>{this.props.values[index]}</Square>
-    )
-  }
-
   render() {
     return (<div className="splitRow">
       <SquareHeader onClick={(event) => { this.handleClick(event); }}>{this.props.rank}</SquareHeader>
-      {this.renderValue(0)}
-      {this.renderValue(1)}
-      {this.renderValue(2)}
-      {this.renderValue(3)}
-      {this.renderValue(4)}
-      {this.renderValue(5)}
+      {this.props.values.map((value, index) => <Square isSelected={(this.props.selected == index)}>{this.props.values[index]}</Square>)}
     </div>);
   }
 }
