@@ -38,11 +38,11 @@ class App extends React.Component {
   render() {
     return (
       <ThemeProvider theme={DarkTheme}>
-        <div>
+        <React.Fragment>
           <GlobalStyle />
           <Header />
           <Main />
-        </div>
+        </React.Fragment>
       </ThemeProvider>
     );
   }
