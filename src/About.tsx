@@ -10,7 +10,7 @@ class About extends BasePage {
   render() {
     return (
       <div>
-        This site was created by Shane DeSeranno and Donald Gill to aid in game scoring.
+        This site was created by Shane DeSeranno, Donald Gill, and Lara Ramey to aid in game scoring.
       </div>
     );
   }

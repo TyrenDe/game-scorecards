@@ -4,7 +4,7 @@ abstract class BasePage<P = {}, S = {}, SS = any> extends React.Component<P, S, 
   public abstract getPageName(): string;
 
   componentDidMount() {
-    document.title="Game Scorecards: " + this.getPageName();
+    document.title = "Game Scorecards: " + this.getPageName();
   }
 }
 
