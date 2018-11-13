@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import styled from "../Theme";
-import CardRank from "./CardRank";
+import { CardRank, AllRanks } from "./CardRank";
 import BoardRow from "./BoardRow";
 import { throws } from "assert";
 
@@ -82,20 +82,11 @@ class Split extends React.Component<{}, IBoardState> {
   }
 
   private calculateScore(): number {
-    return this.state.negatives * -5 + 
-      Split.getRankValues(CardRank.Ace)[this.state.values[CardRank.Ace]] +
-      Split.getRankValues(CardRank.King)[this.state.values[CardRank.King]] +
-      Split.getRankValues(CardRank.Queen)[this.state.values[CardRank.Queen]] +
-      Split.getRankValues(CardRank.Jack)[this.state.values[CardRank.Jack]] +
-      Split.getRankValues(CardRank.Ten)[this.state.values[CardRank.Ten]] +
-      Split.getRankValues(CardRank.Nine)[this.state.values[CardRank.Nine]] +
-      Split.getRankValues(CardRank.Eight)[this.state.values[CardRank.Eight]] +
-      Split.getRankValues(CardRank.Seven)[this.state.values[CardRank.Seven]] +
-      Split.getRankValues(CardRank.Six)[this.state.values[CardRank.Six]] +
-      Split.getRankValues(CardRank.Five)[this.state.values[CardRank.Five]] +
-      Split.getRankValues(CardRank.Four)[this.state.values[CardRank.Four]] +
-      Split.getRankValues(CardRank.Three)[this.state.values[CardRank.Three]] +
-      Split.getRankValues(CardRank.Two)[this.state.values[CardRank.Two]];
+    let total = this.state.negatives * -5;
+    for (let rank of AllRanks) {
+      total += Split.getRankValues(rank)[this.state.values[rank]];
+    }
+    return total;
   }
 
   renderRow(rank: CardRank) {
@@ -132,20 +123,6 @@ class Split extends React.Component<{}, IBoardState> {
   }
 
   render() {
-    const allRanks = [
-      CardRank.Ace,
-      CardRank.King,
-      CardRank.Queen,
-      CardRank.Jack,
-      CardRank.Ten,
-      CardRank.Nine,
-      CardRank.Eight,
-      CardRank.Seven,
-      CardRank.Six,
-      CardRank.Five,
-      CardRank.Four,
-      CardRank.Three,
-      CardRank.Two];
     return (
       <div>
         <ScoreHeader>
@@ -154,7 +131,7 @@ class Split extends React.Component<{}, IBoardState> {
           <ScoreButton onClick={() => this.subNegative()}>+5</ScoreButton>
           <ScoreValue>Score: {this.calculateScore()}</ScoreValue>
         </ScoreHeader>
-        { allRanks.map((rank) => <BoardRow rank={rank} values={Split.getRankValues(rank)} selected={this.state.values[rank]} onClick={event => { this.addOne(rank); }}/>)}
+        { AllRanks.map((rank) => <BoardRow rank={rank} values={Split.getRankValues(rank)} selected={this.state.values[rank]} onClick={event => { this.addOne(rank); }}/>)}
       </div>
     );
   }

@@ -14,4 +14,19 @@ export enum CardRank {
   Two = '2',
 }
 
+export const AllRanks = [
+  CardRank.Ace,
+  CardRank.King,
+  CardRank.Queen,
+  CardRank.Jack,
+  CardRank.Ten,
+  CardRank.Nine,
+  CardRank.Eight,
+  CardRank.Seven,
+  CardRank.Six,
+  CardRank.Five,
+  CardRank.Four,
+  CardRank.Three,
+  CardRank.Two];
+
 export default CardRank;
