@@ -13,9 +13,11 @@ const Row = styled.div`
 `;
 
 const SquareHeader = styled.button`
-  background: ${ props => props.theme.SecondaryBackgroundColor };
-  color: ${ props => props.theme.PrimaryColor };
-  border: 1px solid ${ props => props.theme.InverseBackgroundColor };
+  color: ${ props => props.theme.ButtonColor };
+  background-color: ${ props => props.theme.ButtonBackgroundColor };
+  border-bottom: 1px solid ${ props => props.theme.ButtonColor };
+
+  font-weight: bold;
 `;
 
 const Square = styled<{isSelected: boolean}, "div">("div")`
@@ -25,6 +27,7 @@ const Square = styled<{isSelected: boolean}, "div">("div")`
 
   text-align: center;
   padding-top: 2px;
+  font-weight: ${ props => props.isSelected ? "bold" : "normal" };
 `;
 
 interface IRowProp {

@@ -8,6 +8,10 @@ import { throws } from "assert";
 type CardRankMap = {[TKey in CardRank]: number};
 
 const Board = styled.div`
+  border: 1px solid ${ props => props.theme.PrimaryColor };
+  background-color: ${ props => props.theme.SecondaryBackgroundColor };
+
+  padding: 5px;
   max-width: 400px;
   margin: auto;
 `;
@@ -23,19 +27,26 @@ const ScoreHeader = styled.div`
 `;
 
 const Score = styled.div`
-  flex-basis: 2;
   margin: auto;
+
+  min-width: 110px;
+  text-align: center;
+  font-size: small;
 `;
 
 const ScoreValue = styled(Score)`
-  flex-basis: 2;
-  margin: auto;
+  font-weight: bold;
+  font-size: x-large;
 `;
 
 const ScoreButton = styled.button`
+  color: ${ props => props.theme.ButtonColor };
+  background-color: ${ props => props.theme.ButtonBackgroundColor };
+  border-bottom: 1px solid ${ props => props.theme.ButtonColor };
+
   height: 40px;
   width: 40px;
-  flex-basis: 1;
+  font-weight: bold;
 `;
 
 export interface IBoardState {
@@ -109,7 +120,7 @@ class Split extends React.Component<{}, IBoardState> {
           <ScoreButton onClick={() => this.addNegative()}>-5</ScoreButton>
           <Score>Negative: {this.state.negatives * -5}</Score>
           <ScoreButton onClick={() => this.subNegative()}>+5</ScoreButton>
-          <ScoreValue>Score: {this.calculateScore()}</ScoreValue>
+          <ScoreValue>{this.calculateScore()}</ScoreValue>
         </ScoreHeader>
         { AllRanks.map((rank) => <BoardRow key={rank} rank={rank} values={getRankValues(rank)} selected={this.state.values[rank]} onClick={event => { this.addOne(rank); }}/>)}
       </Board>
