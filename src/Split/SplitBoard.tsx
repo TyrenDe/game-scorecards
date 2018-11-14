@@ -1,34 +1,41 @@
 import * as React from "react";
 
 import styled from "../Theme";
-import { CardRank, AllRanks } from "./CardRank";
+import { CardRank, AllRanks, getRankValues } from "./CardRank";
 import BoardRow from "./BoardRow";
 import { throws } from "assert";
 
 type CardRankMap = {[TKey in CardRank]: number};
 
-const ScoreHeader = styled.div`
-  width: ${55 * 7}px;
-  margin-bottom: 10px;
+const Board = styled.div`
+  max-width: 400px;
+  margin: auto;
+`;
 
-   ::after {
-    clear: both;
-    content: "";
-    display: table;
-  }
+const ScoreHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  margin: auto;
+  padding-bottom: 5px;
+  border-bottom: 1px solid ${ props => props.theme.PrimaryColor };
 `;
 
 const Score = styled.div`
-  float: left;
-  margin: 0px 20px 0px 20px;
+  flex-basis: 2;
+  margin: auto;
 `;
 
 const ScoreValue = styled(Score)`
-  margin: 0px 0px 0px 40px;
+  flex-basis: 2;
+  margin: auto;
 `;
 
 const ScoreButton = styled.button`
-  float: left;
+  height: 40px;
+  width: 40px;
+  flex-basis: 1;
 `;
 
 export interface IBoardState {
@@ -60,39 +67,12 @@ class Split extends React.Component<{}, IBoardState> {
     };
   }
 
-  private static getRankValues(rank: CardRank): number[] {
-    switch (rank) {
-      case CardRank.Ace: return [0, 30, 70, 120, 180, 200];
-      case CardRank.King:
-      case CardRank.Queen:
-      case CardRank.Jack:
-        return [0, 20, 50, 90, 140, 200];
-      case CardRank.Ten:
-      case CardRank.Nine:
-      case CardRank.Eight:
-      case CardRank.Seven:
-      case CardRank.Six:
-      case CardRank.Five:
-      case CardRank.Four:
-      case CardRank.Three:
-        return [0, 10, 30, 60, 100, 200];
-      case CardRank.Two: return [0, 5, 20, 40, 70, 200];
-      default: return [];
-    }
-  }
-
   private calculateScore(): number {
     let total = this.state.negatives * -5;
     for (let rank of AllRanks) {
-      total += Split.getRankValues(rank)[this.state.values[rank]];
+      total += getRankValues(rank)[this.state.values[rank]];
     }
     return total;
-  }
-
-  renderRow(rank: CardRank) {
-    return (
-      <BoardRow rank={rank} values={Split.getRankValues(rank)} selected={this.state.values[rank]} onClick={event => { this.addOne(rank); }}/>
-    );
   }
 
   private addOne(rank: CardRank) {
@@ -124,15 +104,15 @@ class Split extends React.Component<{}, IBoardState> {
 
   render() {
     return (
-      <div>
+      <Board>
         <ScoreHeader>
           <ScoreButton onClick={() => this.addNegative()}>-5</ScoreButton>
           <Score>Negative: {this.state.negatives * -5}</Score>
           <ScoreButton onClick={() => this.subNegative()}>+5</ScoreButton>
           <ScoreValue>Score: {this.calculateScore()}</ScoreValue>
         </ScoreHeader>
-        { AllRanks.map((rank) => <BoardRow rank={rank} values={Split.getRankValues(rank)} selected={this.state.values[rank]} onClick={event => { this.addOne(rank); }}/>)}
-      </div>
+        { AllRanks.map((rank) => <BoardRow key={rank} rank={rank} values={getRankValues(rank)} selected={this.state.values[rank]} onClick={event => { this.addOne(rank); }}/>)}
+      </Board>
     );
   }
 }

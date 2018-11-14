@@ -7,14 +7,9 @@ import Split from "./Split/Split";
 import About from "./About";
 
 const MainWindow = styled.div`
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 1vmin);
   color: ${ props => props.theme.PrimaryColor };
-  padding: 5px;
+
+  padding: 10px;
 `;
 
 class Main extends React.Component {

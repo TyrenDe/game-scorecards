@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import styled from "./Theme";
 import { createGlobalStyle, DarkTheme, LightTheme, ThemeProvider } from "./Theme";
 import Header from "./Header";
 import Main from "./Main";
@@ -15,14 +16,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   nav ul {
-    list-style: none;
-    overflow: hidden;
-    position: relative;
   }
 
   nav ul li {
-    float: left;
-    margin: 0 20px 0 0;
   }
 
   a, a:visited {
@@ -34,15 +30,20 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const Page = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 class App extends React.Component {
   render() {
     return (
       <ThemeProvider theme={DarkTheme}>
-        <React.Fragment>
+        <Page>
           <GlobalStyle />
           <Header />
           <Main />
-        </React.Fragment>
+        </Page>
       </ThemeProvider>
     );
   }

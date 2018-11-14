@@ -5,12 +5,20 @@ import styled from "./Theme";
 
 const StyledHeader = styled.div`
   background-color: ${ props => props.theme.SecondaryBackgroundColor };
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 1vmin);
   color: ${ props => props.theme.PrimaryColor };
+
+  padding: 10px 0 10px 0;
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    display: inline;
+    padding: 10px;
+  }
 `;
 
 class Header extends React.Component {
