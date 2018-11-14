@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/game-scorecards/precache-manifest.b7effb83e916edebb4fd63bd707828fe.js"
+  "/game-scorecards/precache-manifest.bb5926737cfd21958bfd532648d03ab5.js"
 );
 
 workbox.clientsClaim();
