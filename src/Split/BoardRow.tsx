@@ -4,12 +4,6 @@ import styled from "../Theme";
 import { CardRank } from "./CardRank";
 
 const Row = styled.div`
-  /* display: flex;
-  flex-direction: row;
-
-  justify-content: space-between;
-  margin: auto; */
-
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-gap: 10px;
@@ -22,8 +16,6 @@ const SquareHeader = styled.button`
   background: ${ props => props.theme.SecondaryBackgroundColor };
   color: ${ props => props.theme.PrimaryColor };
   border: 1px solid ${ props => props.theme.InverseBackgroundColor };
-
-  flex: 1 1 auto;
 `;
 
 const Square = styled<{isSelected: boolean}, "div">("div")`
@@ -31,8 +23,8 @@ const Square = styled<{isSelected: boolean}, "div">("div")`
   color: ${ props => props.isSelected ? props.theme.PrimaryColor : props.theme.InverseColor };
   border: 1px solid ${ props => props.isSelected ? props.theme.PrimaryColor : props.theme.SecondaryBackgroundColor };
 
-  flex: 1 1 auto;
   text-align: center;
+  padding-top: 2px;
 `;
 
 interface IRowProp {
@@ -54,7 +46,12 @@ class BoardRow extends React.Component<IRowProp> {
   render() {
     return (<Row>
       <SquareHeader onClick={(event) => { this.handleClick(event); }}>{this.props.rank}</SquareHeader>
-      {this.props.values.map((value, index) => <Square key={index} isSelected={(this.props.selected == index)}>{this.props.values[index]}</Square>)}
+      { this.props.values.map((value, index) =>
+        <Square
+          key={index}
+          isSelected={(this.props.selected == index)}>
+          {this.props.values[index]}
+        </Square>)}
     </Row>);
   }
 }
