@@ -4,11 +4,11 @@ import BasePage from "../BasePage";
 import SplitBoard from "./SplitBoard";
 
 class Split extends BasePage {
-  public getPageName(): string {
+  protected getPageName(): string {
     return "Split";
   }
 
-  render() {
+  public render(): React.ReactNode {
     return (
       <SplitBoard/>
     );

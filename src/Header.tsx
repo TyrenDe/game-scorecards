@@ -22,7 +22,7 @@ const StyledHeader = styled.div`
 `;
 
 class Header extends React.Component {
-  render() {
+  public render(): React.ReactNode {
     return (
       <StyledHeader>
         <nav>

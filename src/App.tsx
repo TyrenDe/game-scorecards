@@ -36,7 +36,7 @@ const Page = styled.div`
 `;
 
 class App extends React.Component {
-  render() {
+  public render(): React.ReactNode {
     return (
       <ThemeProvider theme={DarkTheme}>
         <Page>

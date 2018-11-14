@@ -3,11 +3,11 @@ import * as React from "react";
 import BasePage from "./BasePage";
 
 class About extends BasePage {
-  public getPageName(): string {
+  protected getPageName(): string {
     return "About";
   }
 
-  render() {
+  public render(): React.ReactNode {
     return (
       <div>
         This site was created by Shane DeSeranno, Donald Gill, and Lara Ramey to aid in game scoring.

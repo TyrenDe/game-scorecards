@@ -43,7 +43,7 @@ class BoardRow extends React.Component<IRowProp> {
     this.props.onClick(event);
   }
 
-  render() {
+  public render(): React.ReactNode {
     return (<Row>
       <SquareHeader onClick={(event) => { this.handleClick(event); }}>{this.props.rank}</SquareHeader>
       { this.props.values.map((value, index) =>

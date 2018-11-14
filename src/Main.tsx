@@ -13,7 +13,7 @@ const MainWindow = styled.div`
 `;
 
 class Main extends React.Component {
-  render() {
+  public render(): React.ReactNode {
     return (
       <MainWindow>
         <Switch>

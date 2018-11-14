@@ -75,7 +75,7 @@ class Split extends React.Component<{}, IBoardState> {
     return total;
   }
 
-  private addOne(rank: CardRank) {
+  private addOne(rank: CardRank): void {
     let newState = { ...this.state };
 
     newState.values[rank] = (newState.values[rank] + 1) % 6;
@@ -83,7 +83,7 @@ class Split extends React.Component<{}, IBoardState> {
     this.setState(newState);
   }
 
-  private addNegative() {
+  private addNegative(): void {
     let newState = { ...this.state };
 
     newState.negatives++;
@@ -91,7 +91,7 @@ class Split extends React.Component<{}, IBoardState> {
     this.setState(newState);
   }
 
-  private subNegative() {
+  private subNegative(): void {
     let newState = { ...this.state };
 
     newState.negatives--;
@@ -102,7 +102,7 @@ class Split extends React.Component<{}, IBoardState> {
     this.setState(newState);
   }
 
-  render() {
+  public render(): React.ReactNode {
     return (
       <Board>
         <ScoreHeader>
