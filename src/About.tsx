@@ -10,7 +10,7 @@ class About extends BasePage {
   public render(): React.ReactNode {
     return (
       <div>
-        This site was created by Shane DeSeranno, Donald Gill, and Lara Ramey to aid in game scoring.
+        This site was created by Shane DeSeranno, Donald Gill, and Lara Ramey to aid in scoring games.
       </div>
     );
   }
