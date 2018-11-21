@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/game-scorecards/static/js/runtime~main.d076c119.js"
   },
   {
-    "revision": "0cc9d73ae4c4b28ad081",
-    "url": "/game-scorecards/static/js/main.0cc9d73a.chunk.js"
+    "revision": "29fb4175cdae975cd356",
+    "url": "/game-scorecards/static/js/main.29fb4175.chunk.js"
   },
   {
     "revision": "d60166cc0946d32347fa",
     "url": "/game-scorecards/static/js/1.d60166cc.chunk.js"
   },
   {
-    "revision": "59b75094867b549aa871a53f01954174",
+    "revision": "3b1ad712521af030b2bd6a24a6241ad6",
     "url": "/game-scorecards/index.html"
   }
 ];
