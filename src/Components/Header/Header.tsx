@@ -1,25 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 
-import styled from "./Theme";
-
-const StyledHeader = styled.div`
-  background-color: ${ props => props.theme.SecondaryBackgroundColor };
-  color: ${ props => props.theme.PrimaryColor };
-
-  padding: 10px 0 10px 0;
-
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  nav ul li {
-    display: inline;
-    padding: 10px;
-  }
-`;
+import { StyledHeader } from "./Styles";
 
 class Header extends React.Component {
   public render(): React.ReactNode {

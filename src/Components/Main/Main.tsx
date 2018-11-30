@@ -1,17 +1,12 @@
 import * as React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import styled from "./Theme";
-import Home from "./Home";
-import Split from "./Split/Split";
-import About from "./About";
-import MilleBornes from "./MilleBornes/MilleBornes";
+import { MainWindow } from "./Styles";
 
-const MainWindow = styled.div`
-  color: ${ props => props.theme.PrimaryColor };
-
-  padding: 10px;
-`;
+import Home from "../Home/Home";
+import Split from "../Split/Split";
+import About from "../About/About";
+import MilleBornes from "../MilleBornes/MilleBornes";
 
 class Main extends React.Component {
   public render(): React.ReactNode {

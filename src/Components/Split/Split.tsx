@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import BasePage from "../BasePage";
-import SplitBoard from "./SplitBoard";
+import BasePage from "../BasePage/BasePage";
+import SplitBoard from "./SplitBoard/SplitBoard";
 
 class Split extends BasePage {
   protected getPageName(): string {

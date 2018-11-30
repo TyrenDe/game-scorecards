@@ -1,53 +1,11 @@
 import * as React from "react";
 
-import styled from "../Theme";
-import { CardRank, AllRanks, getRankValues } from "./CardRank";
-import BoardRow from "./BoardRow";
-import { throws } from "assert";
+import { Board, ScoreHeader, ScoreValue, Score, ScoreButton } from "./Styles";
+
+import { CardRank, AllRanks, getRankValues } from "../CardRank";
+import BoardRow from "../BoardRow/BoardRow";
 
 type CardRankMap = {[TKey in CardRank]: number};
-
-const Board = styled.div`
-  border: 1px solid ${ props => props.theme.PrimaryColor };
-  background-color: ${ props => props.theme.SecondaryBackgroundColor };
-
-  padding: 5px;
-  max-width: 400px;
-  margin: auto;
-`;
-
-const ScoreHeader = styled.div`
-  display: flex;
-  flex-direction: row;
-
-  justify-content: space-between;
-  margin: auto;
-  padding-bottom: 5px;
-  border-bottom: 1px solid ${ props => props.theme.PrimaryColor };
-`;
-
-const Score = styled.div`
-  margin: auto;
-
-  min-width: 110px;
-  text-align: center;
-  font-size: small;
-`;
-
-const ScoreValue = styled(Score)`
-  font-weight: bold;
-  font-size: x-large;
-`;
-
-const ScoreButton = styled.button`
-  color: ${ props => props.theme.ButtonColor };
-  background-color: ${ props => props.theme.ButtonBackgroundColor };
-  border-bottom: 1px solid ${ props => props.theme.ButtonColor };
-
-  height: 40px;
-  width: 40px;
-  font-weight: bold;
-`;
 
 export interface IBoardState {
   negatives: number,

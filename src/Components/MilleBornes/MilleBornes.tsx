@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import BasePage from "../BasePage";
+import BasePage from "../BasePage/BasePage";
 
 enum GameStates {
   EnterNames,
