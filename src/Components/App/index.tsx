@@ -7,7 +7,6 @@ import { Dispatch } from 'redux';
 import { AppState } from '../../Store';
 import { Themes } from '../../Theme';
 import * as system from '../../Store/System';
-import Footer from '../Footer';
 import Header from '../Header';
 import Main from '../Main';
 
@@ -24,7 +23,6 @@ class App extends React.Component<IAppProps, {}> {
         <CssBaseline />
         <Header />
         <Main />
-        <Footer />
       </ThemeProvider>
     );
   }

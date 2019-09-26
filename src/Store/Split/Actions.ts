@@ -8,6 +8,14 @@ export function addValue(name: string, rank: types.SplitRanks): types.SplitActio
   };
 }
 
+export function removeValue(name: string, rank: types.SplitRanks): types.SplitActionTypes {
+  return {
+    name,
+    rank,
+    type: types.SPLIT_REMOVE_VALUE,
+  };
+}
+
 export function resetAll(): types.SplitActionTypes {
   return {
     type: types.SPLIT_RESET_ALL,

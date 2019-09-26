@@ -1,14 +1,16 @@
 import * as React from 'react';
 import * as Mui from '@material-ui/core';
+import Footer from '../Footer';
 
 class Home extends React.Component<{}, {}> {
   public render(): JSX.Element {
     return (
-      <Mui.Box m={2}>
+      <React.Fragment>
         <Mui.Typography>
           This is the home page where we provide useful details.
         </Mui.Typography>
-      </Mui.Box>
+        <Footer />
+      </React.Fragment>
     );
   }
 }

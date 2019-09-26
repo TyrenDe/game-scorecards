@@ -3,7 +3,7 @@ import * as types from './Types';
 
 const initialState: types.ISystemState = {
   selectedTheme: types.ThemeOptions.Dark,
-  names: ['Shane', 'Lara', 'Don', 'Leah'],
+  names: (process.env.NODE_ENV === 'development') ? ['Shane', 'Lara', 'Don', 'Leah'] : [],
 };
 
 export function systemReducer(state = initialState, action: types.SystemActionTypes): types.ISystemState {
