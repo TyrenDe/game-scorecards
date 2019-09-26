@@ -1,10 +1,12 @@
 {
   "extends": "tslint:recommended",
   "rules": {
-    "comment-format": [
-      true,
-      "check-space",
-      "check-uppercase"
-    ]
-  },
+    "comment-format": false,
+    "max-classes-per-file": false,
+    "max-line-length": false,
+    "no-console": false,
+    "quotemark": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false
+  }
 }

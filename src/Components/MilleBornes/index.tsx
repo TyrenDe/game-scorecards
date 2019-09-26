@@ -1,11 +1,9 @@
-import * as React from "react";
-
-import BasePage from "../BasePage/BasePage";
+import * as React from 'react';
 
 enum GameStates {
   EnterNames,
   Playing,
-  GameOver
+  GameOver,
 }
 
 interface IMilleBornesState {
@@ -14,11 +12,7 @@ interface IMilleBornesState {
   team2Name: string;
 }
 
-class MilleBornes extends BasePage<{}, IMilleBornesState> {
-  protected getPageName(): string {
-    return "Mille Bornes";
-  }
-
+class MilleBornes extends React.Component<{}, IMilleBornesState> {
   constructor(props: {}) {
     super(props);
 
@@ -26,7 +20,11 @@ class MilleBornes extends BasePage<{}, IMilleBornesState> {
       gameState: GameStates.EnterNames,
       team1Name: "",
       team2Name: "",
-    }
+    };
+  }
+
+  public render(): JSX.Element {
+    return this.CurrentState();
   }
 
   private handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
@@ -37,10 +35,10 @@ class MilleBornes extends BasePage<{}, IMilleBornesState> {
       case GameStates.Playing:
         this.setState({ gameState: GameStates.GameOver });
         break;
-      case GameStates.EnterNames:
+      case GameStates.GameOver:
         this.setState({ gameState: GameStates.EnterNames });
         break;
-    };
+    }
     event.preventDefault();
   }
 
@@ -48,18 +46,18 @@ class MilleBornes extends BasePage<{}, IMilleBornesState> {
     const target = event.target;
     const name = target.name;
 
-    if (name == "team1Name") {
+    if (name === "team1Name") {
       this.setState({
-        team1Name: target.value
+        team1Name: target.value,
       });
     } else {
       this.setState({
-        team2Name: target.value
+        team2Name: target.value,
       });
     }
   }
 
-  private CurrentState(): React.ReactNode {
+  private CurrentState(): JSX.Element {
     switch (this.state.gameState) {
       case GameStates.EnterNames:
         return (
@@ -81,7 +79,7 @@ class MilleBornes extends BasePage<{}, IMilleBornesState> {
         return (
           <div>
             Add new round -&gt; Enter values for each team
-        </div>
+          </div>
         );
       case GameStates.GameOver:
         return (
@@ -97,10 +95,6 @@ class MilleBornes extends BasePage<{}, IMilleBornesState> {
     }
 
     return (<div>Error?</div>);
-  }
-
-  public render(): React.ReactNode {
-    return this.CurrentState();
   }
 }
 

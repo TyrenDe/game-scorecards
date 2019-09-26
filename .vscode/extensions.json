@@ -1,7 +1,7 @@
 {
   "recommendations": [
     "aeschli.vscode-css-formatter",
-    "eg2.tslint",
+    "ms-vscode.vscode-typescript-tslint-plugin",
     "jpoissonnier.vscode-styled-components"
   ],
   "unwantedRecommendations": []
