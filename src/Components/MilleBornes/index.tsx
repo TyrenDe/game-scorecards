@@ -18,8 +18,8 @@ class MilleBornes extends React.Component<{}, IMilleBornesState> {
 
     this.state = {
       gameState: GameStates.EnterNames,
-      team1Name: "",
-      team2Name: "",
+      team1Name: '',
+      team2Name: '',
     };
   }
 
@@ -46,7 +46,7 @@ class MilleBornes extends React.Component<{}, IMilleBornesState> {
     const target = event.target;
     const name = target.name;
 
-    if (name === "team1Name") {
+    if (name === 'team1Name') {
       this.setState({
         team1Name: target.value,
       });
@@ -64,15 +64,15 @@ class MilleBornes extends React.Component<{}, IMilleBornesState> {
           <form onSubmit={(event) => this.handleSubmit(event)}>
             <label>
               Team 1:
-              <input type="text" name="team1Name" onChange={(event) => this.handleTextChange(event)} />
+              <input type='text' name='team1Name' onChange={(event) => this.handleTextChange(event)} />
             </label>
 
             <label>
               Team 2:
-              <input type="text" name="team2Name" />
+              <input type='text' name='team2Name' />
             </label>
 
-            <input type="submit" value="Start Game" />
+            <input type='submit' value='Start Game' />
           </form>
         );
       case GameStates.Playing:

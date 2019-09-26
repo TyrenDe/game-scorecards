@@ -1,4 +1,4 @@
-import * as types from "./Types";
+import * as types from './Types';
 
 export function changeTheme(newTheme: types.ThemeOptions): types.SystemActionTypes {
   return {

@@ -8,9 +8,9 @@ export interface ISystemState {
   names: string[];
 }
 
-export const SYSTEM_CHANGE_THEME = "SYSTEM_CHANGE_THEME";
-export const SYSTEM_ADD_NAME = "SYSTEM_ADD_NAME";
-export const SYSTEM_REMOVE_NAME = "SYSTEM_REMOVE_NAME";
+export const SYSTEM_CHANGE_THEME = 'SYSTEM_CHANGE_THEME';
+export const SYSTEM_ADD_NAME = 'SYSTEM_ADD_NAME';
+export const SYSTEM_REMOVE_NAME = 'SYSTEM_REMOVE_NAME';
 
 export interface ISystemChangeThemeAction {
   newTheme: ThemeOptions;

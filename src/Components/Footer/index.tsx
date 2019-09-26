@@ -50,8 +50,8 @@ class Footer extends React.Component<IAllFooterProps, IFooterState> {
 
     this.dialogInputRef = React.createRef();
     this.state = {
-      error: "",
-      newName: "",
+      error: '',
+      newName: '',
       showAddPlayerDialog: false,
     };
   }
@@ -59,14 +59,14 @@ class Footer extends React.Component<IAllFooterProps, IFooterState> {
   public render(): JSX.Element {
     return (
       <React.Fragment>
-        <Mui.AppBar position="fixed" className={this.props.classes.appBar}>
+        <Mui.AppBar position='fixed' className={this.props.classes.appBar}>
           <div className={this.props.classes.chipWrapper}>
-            <Mui.Chip icon={<AddIcon />} label="Add Player" variant="outlined" className={this.props.classes.chip} onClick={this.handleAdd} />
-            {this.props.names.map((name) => <Mui.Chip key={name} label={name} variant="outlined" className={this.props.classes.chip} onDelete={() => this.handleDelete(name)} />)}
+            <Mui.Chip icon={<AddIcon />} label='Add Player' variant='outlined' className={this.props.classes.chip} onClick={this.handleAdd} />
+            {this.props.names.map((name) => <Mui.Chip key={name} label={name} variant='outlined' className={this.props.classes.chip} onDelete={() => this.handleDelete(name)} />)}
           </div>
         </Mui.AppBar>
 
-        <Mui.Dialog open={this.state.showAddPlayerDialog} maxWidth="xs" fullWidth={true} onClose={this.handleDialogClose}>
+        <Mui.Dialog open={this.state.showAddPlayerDialog} maxWidth='xs' fullWidth={true} onClose={this.handleDialogClose}>
           <Mui.DialogContent>
             <Mui.TextField
               fullWidth={true}
@@ -75,15 +75,15 @@ class Footer extends React.Component<IAllFooterProps, IFooterState> {
               value={this.state.newName}
               onChange={this.handleNewNameChange}
               onKeyPress={this.handleKeyPress}
-              label="Player or Team Name"
+              label='Player or Team Name'
               ref={this.dialogInputRef}
             />
             {(this.state.error.length !== 0) ? <Mui.FormHelperText error={true}>{this.state.error}</Mui.FormHelperText> : null}
           </Mui.DialogContent>
           <Mui.DialogActions>
             <Mui.Button
-              variant="contained"
-              color="primary"
+              variant='contained'
+              color='primary'
               onClick={this.handleDialogClose}
             >
               Cancel
@@ -92,8 +92,8 @@ class Footer extends React.Component<IAllFooterProps, IFooterState> {
             <Mui.Button
               disabled={this.state.error.length !== 0 || this.state.newName.length === 0}
               onClick={this.handleAddName}
-              variant="contained"
-              color="primary"
+              variant='contained'
+              color='primary'
             >
               Add
             </Mui.Button>
@@ -119,10 +119,10 @@ class Footer extends React.Component<IAllFooterProps, IFooterState> {
   private handleNewNameChange(event: React.ChangeEvent<HTMLInputElement>): void {
     const newName: string = event.target.value.trim();
 
-    let error: string = "";
+    let error: string = '';
     const existingProfile: string | undefined = this.props.names.find((profile) => profile.toLowerCase() === newName.toLowerCase());
     if (existingProfile) {
-      error = "Player or team already exists";
+      error = 'Player or team already exists';
     }
 
     this.setState({
@@ -135,13 +135,15 @@ class Footer extends React.Component<IAllFooterProps, IFooterState> {
   private handleAddName(): void {
     const newName: string = this.state.newName.trim();
 
-    this.props.addName(newName);
-    this.setState({
-      newName: "",
-    });
+    if (newName.length > 0) {
+      this.props.addName(newName);
+      this.setState({
+        newName: '',
+      });
 
-    if (this.dialogInputRef.current) {
-      this.dialogInputRef.current.focus();
+      if (this.dialogInputRef.current) {
+        this.dialogInputRef.current.focus();
+      }
     }
   }
 
@@ -149,7 +151,7 @@ class Footer extends React.Component<IAllFooterProps, IFooterState> {
   private handleDialogClose(): void {
     this.setState({
       showAddPlayerDialog: false,
-      newName: "",
+      newName: '',
     });
   }
 

@@ -4,14 +4,7 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
 import { AppState } from '../../Store';
-
-class Board extends React.Component<{}, {}> {
-  public render(): JSX.Element {
-    return (
-      <div style={{width: 250, backgroundColor: "red"}}>WOW!</div>
-    );
-  }
-}
+import ScoreCard from './ScoreCard';
 
 const localStyles = (theme: Mui.Theme) => Mui.createStyles({
   splitWrapper: {
@@ -32,7 +25,7 @@ class Split extends React.Component<IAllSplitProps, {}> {
   public render(): JSX.Element {
     return (
       <div className={this.props.classes.splitWrapper}>
-        {this.props.names.map((name) => <Board key={name}/>)}
+        {this.props.names.map((name) => <ScoreCard key={name} name={name}/>)}
       </div>
     );
   }
