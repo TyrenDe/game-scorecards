@@ -15,6 +15,7 @@ export enum SplitRanks {
 
   Negative = 'Negative',
 }
+
 export interface ISplitScore {
   readonly values: Record<SplitRanks, number>;
 }

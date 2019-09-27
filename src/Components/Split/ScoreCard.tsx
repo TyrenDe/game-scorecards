@@ -10,8 +10,8 @@ import * as split from '../../Store/Split';
 const localStyles = (theme: Mui.Theme) => Mui.createStyles({
   scoreCardPaper: {
     margin: theme.spacing(1),
-    width: 320,
-    minWidth: 320,
+    width: 360,
+    minWidth: 360,
     padding: theme.spacing(1),
   },
   avatar: {

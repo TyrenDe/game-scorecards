@@ -40,7 +40,7 @@ class Split extends React.Component<IAllSplitProps, {}> {
 
     return (
       <React.Fragment>
-        <Mui.Button color="primary" variant="contained" onClick={this.handleReset}>Reset All</Mui.Button>
+        <Mui.Button color='primary' variant='contained' onClick={this.handleReset}>Reset All</Mui.Button>
         <div className={this.props.classes.splitWrapper}>
           {this.props.names.map((name) => <ScoreCard key={name} name={name} />)}
         </div>
