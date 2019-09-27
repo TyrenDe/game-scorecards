@@ -8,10 +8,10 @@ Done:
 * Split
 * Mille Bornes
 * Generic
+  * Five Crowns
+  * Sticheln
 
 To Do:
-* Five Crowns
-* Sticheln
 * Mü
 * Yahtzee
 
