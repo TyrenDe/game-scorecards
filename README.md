@@ -6,12 +6,12 @@ This project is design to allow for quick and simple game score cards.  The plan
 
 Done:
 * Split
+* Mille Bornes
 
 To Do:
-* Yahtzee
 * Five Crowns
-* Mille Bornes
-* ???
+* Sticheln
+* Yahtzee
 
 ### Development Notes:
 
