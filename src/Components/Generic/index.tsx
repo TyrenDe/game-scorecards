@@ -4,31 +4,31 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
 import { AppState } from '../../Store';
-import * as split from '../../Store/Split';
+import * as generic from '../../Store/Generic';
 import ScoreCard from './ScoreCard';
 import { bind } from 'decko';
 
 const localStyles = (theme: Mui.Theme) => Mui.createStyles({
-  splitWrapper: {
+  genericWrapper: {
     display: 'flex',
     flexWrap: 'wrap',
   },
 });
 
-interface ISplitProps {
+interface IGenericProps {
   names: string[];
 }
 
-interface ISplitActions {
+interface IGenericActions {
   reset(): void;
 }
 
-type IAllSplitProps =
-  ISplitProps &
-  ISplitActions &
+type IAllGenericProps =
+  IGenericProps &
+  IGenericActions &
   Mui.WithStyles<typeof localStyles>;
 
-class Split extends React.Component<IAllSplitProps, {}> {
+class Generic extends React.Component<IAllGenericProps, {}> {
   public render(): JSX.Element {
     if (this.props.names.length === 0) {
       return (
@@ -40,7 +40,7 @@ class Split extends React.Component<IAllSplitProps, {}> {
 
     return (
       <React.Fragment>
-        <div className={this.props.classes.splitWrapper}>
+        <div className={this.props.classes.genericWrapper}>
           {this.props.names.map((name) => <ScoreCard key={name} name={name} />)}
         </div>
         <Mui.Button color='primary' variant='contained' onClick={this.handleReset}>Reset All</Mui.Button>
@@ -53,12 +53,12 @@ class Split extends React.Component<IAllSplitProps, {}> {
     this.props.reset();
   }
 }
-const mapStateToProps = (state: AppState): ISplitProps => ({
+const mapStateToProps = (state: AppState): IGenericProps => ({
   names: state.system.names,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch): ISplitActions => ({
-  reset: () => dispatch(split.resetAll()),
+const mapDispatchToProps = (dispatch: Dispatch): IGenericActions => ({
+  reset: () => dispatch(generic.resetAll()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Mui.withStyles(localStyles)(Split));
+export default connect(mapStateToProps, mapDispatchToProps)(Mui.withStyles(localStyles)(Generic));

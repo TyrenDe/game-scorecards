@@ -3,9 +3,10 @@ import * as Mui from '@material-ui/core';
 import { Switch, Route } from 'react-router-dom';
 
 import Home from '../Home';
-import Split from '../Split';
 import About from '../About/About';
+import Generic from '../Generic';
 import MilleBornes from '../MilleBornes';
+import Split from '../Split';
 
 class Main extends React.Component<{}, {}> {
   public render(): JSX.Element {
@@ -15,6 +16,7 @@ class Main extends React.Component<{}, {}> {
           <Route exact path='/' component={Home} />
           <Route path='/split' component={Split} />
           <Route path='/millebornes' component={MilleBornes} />
+          <Route path='/generic' component={Generic} />
           <Route path='/about' component={About} />
         </Switch>
       </Mui.Box>

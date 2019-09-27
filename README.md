@@ -7,10 +7,12 @@ This project is design to allow for quick and simple game score cards.  The plan
 Done:
 * Split
 * Mille Bornes
+* Generic
 
 To Do:
 * Five Crowns
 * Sticheln
+* Mü
 * Yahtzee
 
 ### Development Notes:

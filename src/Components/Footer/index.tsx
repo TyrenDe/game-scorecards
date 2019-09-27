@@ -43,12 +43,9 @@ interface IFooterState {
 }
 
 class Footer extends React.Component<IAllFooterProps, IFooterState> {
-  private dialogInputRef: React.RefObject<HTMLInputElement>;
-
   constructor(p: IAllFooterProps) {
     super(p);
 
-    this.dialogInputRef = React.createRef();
     this.state = {
       error: '',
       newName: '',
@@ -76,7 +73,6 @@ class Footer extends React.Component<IAllFooterProps, IFooterState> {
               onChange={this.handleNewNameChange}
               onKeyPress={this.handleKeyPress}
               label='Player or Team Name'
-              ref={this.dialogInputRef}
             />
             {(this.state.error.length !== 0) ? <Mui.FormHelperText error={true}>{this.state.error}</Mui.FormHelperText> : null}
           </Mui.DialogContent>
@@ -112,7 +108,6 @@ class Footer extends React.Component<IAllFooterProps, IFooterState> {
 
       event.preventDefault();
     }
-
   }
 
   @bind
@@ -140,10 +135,6 @@ class Footer extends React.Component<IAllFooterProps, IFooterState> {
       this.setState({
         newName: '',
       });
-
-      if (this.dialogInputRef.current) {
-        this.dialogInputRef.current.focus();
-      }
     }
   }
 
@@ -160,10 +151,6 @@ class Footer extends React.Component<IAllFooterProps, IFooterState> {
     this.setState({
       showAddPlayerDialog: true,
     });
-
-    if (this.dialogInputRef.current) {
-      this.dialogInputRef.current.focus();
-    }
   }
 
   @bind

@@ -1,11 +1,13 @@
 import { applyMiddleware, combineReducers, createStore, Store } from 'redux';
 import thunk from 'redux-thunk';
 
+import { genericReducer } from './Generic/Reducers';
 import { milleBornesReducer } from './MilleBornes/Reducers';
 import { splitReducer } from './Split/Reducers';
 import { systemReducer } from './System/Reducers';
 
 const rootReducer = combineReducers({
+  generic: genericReducer,
   milleBornes: milleBornesReducer,
   split: splitReducer,
   system: systemReducer,
