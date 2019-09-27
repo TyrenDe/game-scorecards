@@ -31,6 +31,14 @@ type IAllMilleBornesProps =
 
 class MilleBornes extends React.Component<IAllMilleBornesProps, {}> {
   public render(): JSX.Element {
+    if (this.props.names.length === 0) {
+      return (
+        <Mui.Typography>
+          Go back to Home and add some players first!
+        </Mui.Typography>
+      );
+    }
+
     return (
       <React.Fragment>
         <div className={this.props.classes.milleBornesWrapper}>
