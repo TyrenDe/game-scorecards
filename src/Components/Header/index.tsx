@@ -11,7 +11,7 @@ class Header extends React.Component<IAllHeaderProps, {}> {
       <React.Fragment>
         <nav>
           <Mui.AppBar position='static'>
-            <Mui.Tabs value={this.props.location.pathname}>
+            <Mui.Tabs value={this.props.location.pathname} variant='scrollable' scrollButtons='on'>
               <Mui.Tab value='/' label='Home' to='/' component={Link} />
               <Mui.Tab value='/split' label='Split' to='/split' component={Link} />
               <Mui.Tab value='/millebornes' label='Mille Bornes' to='/millebornes' component={Link} />
