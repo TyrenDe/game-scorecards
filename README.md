@@ -10,9 +10,9 @@ Done:
 * Generic
   * Five Crowns
   * Sticheln
+* Mü
 
 To Do:
-* Mü
 * Yahtzee
 
 ### Development Notes:
