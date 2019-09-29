@@ -13,12 +13,16 @@ const localStyles = (theme: Mui.Theme) => Mui.createStyles({
     textAlign: 'center',
     verticalAlign: 'middle',
   },
+  hidden: {
+    display: 'none',
+  },
 });
 
 interface ISafetyRowProps {
   name: string;
   played: boolean;
   coupFourre: boolean;
+  hideCoupFourre?: boolean;
   togglePlayed(): void;
   toggleCoupFourre(): void;
 }
@@ -35,7 +39,7 @@ class SafetyRow extends React.Component<IAllSafetyRowProps, {}> {
           <Mui.Typography className={this.props.classes.marginTop}>{this.props.name}:</Mui.Typography>
         </Mui.Grid>
         <Mui.Grid item={true} xs={3} className={this.props.classes.center}><Mui.Checkbox checked={this.props.played} onChange={this.props.togglePlayed} /></Mui.Grid>
-        <Mui.Grid item={true} xs={3} className={this.props.classes.center}><Mui.Checkbox disabled={!this.props.played} checked={this.props.coupFourre} onChange={this.props.toggleCoupFourre} /></Mui.Grid>
+        <Mui.Grid className={this.props.hideCoupFourre ? this.props.classes.hidden : this.props.classes.center} item={true} xs={3}><Mui.Checkbox disabled={!this.props.played} checked={this.props.coupFourre} onChange={this.props.toggleCoupFourre} /></Mui.Grid>
       </React.Fragment>
     );
   }

@@ -121,9 +121,9 @@ class ScoreCard extends React.Component<IAllScoreCardProps, IScoreCardState> {
               <Mui.Grid item={true} xs={3} className={this.props.classes.center}><Mui.Typography>Played</Mui.Typography></Mui.Grid>
               <Mui.Grid item={true} xs={3} className={this.props.classes.center}><Mui.Typography>Coup-fourré</Mui.Typography></Mui.Grid>
 
-              <SafetyRow name='Right of Way' played={this.state.rightOfWayPlayed} coupFourre={this.state.rightOfWayPlayedCF} togglePlayed={this.handleToggleRightOfWay} toggleCoupFourre={this.handleToggleRightOfWayCF} />
+              <SafetyRow name='Right of Way' hideCoupFourre={true} played={this.state.rightOfWayPlayed} coupFourre={this.state.rightOfWayPlayedCF} togglePlayed={this.handleToggleRightOfWay} toggleCoupFourre={this.handleToggleRightOfWayCF} />
               <SafetyRow name='Driving Ace' played={this.state.drivingAcePlayed} coupFourre={this.state.drivingAcePlayedCF} togglePlayed={this.handleToggleDrivingAce} toggleCoupFourre={this.handleToggleDrivingAceCF} />
-              <SafetyRow name='Fuel Tank' played={this.state.fuelTankPlayed} coupFourre={this.state.fuelTankPlayedCF} togglePlayed={this.handleToggleFuelTank} toggleCoupFourre={this.handleToggleFuelTankCF} />
+              <SafetyRow name='Extra Tank' played={this.state.fuelTankPlayed} coupFourre={this.state.fuelTankPlayedCF} togglePlayed={this.handleToggleFuelTank} toggleCoupFourre={this.handleToggleFuelTankCF} />
               <SafetyRow name='Puncture Proof' played={this.state.punctureProofPlayed} coupFourre={this.state.punctureProofPlayedCF} togglePlayed={this.handleTogglePunctureProof} toggleCoupFourre={this.handleTogglePunctureProofCF} />
 
               <Mui.Grid item={true} xs={4} className={this.props.classes.right}>
