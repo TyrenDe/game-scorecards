@@ -9,6 +9,7 @@ import * as mu from '../../Store/Mu';
 import ScoreCard from './ScoreCard';
 import ScoreHandDialog from './ScoreHandDialog';
 import StalemateDialog from './StalemateDialog';
+import ConfirmationDialog from '../ConfirmationDialog';
 
 const localStyles = (theme: Mui.Theme) => Mui.createStyles({
   muWrapper: {
@@ -36,6 +37,7 @@ type IAllMuProps =
 interface IMuState {
   showStalemateDialog: boolean;
   showScoreDialog: boolean;
+  showConfirmationDialog: boolean;
 }
 
 class Mu extends React.Component<IAllMuProps, IMuState> {
@@ -45,6 +47,7 @@ class Mu extends React.Component<IAllMuProps, IMuState> {
     this.state = {
       showScoreDialog: false,
       showStalemateDialog: false,
+      showConfirmationDialog: false,
     };
   }
 
@@ -76,6 +79,7 @@ class Mu extends React.Component<IAllMuProps, IMuState> {
 
         <ScoreHandDialog onClose={this.handleDialogClose} showDialog={this.state.showScoreDialog} />
         <StalemateDialog onClose={this.handleDialogClose} showDialog={this.state.showStalemateDialog} />
+        <ConfirmationDialog onClose={this.handleConfirmation} showDialog={this.state.showConfirmationDialog}/>
       </React.Fragment>
     );
   }
@@ -85,6 +89,7 @@ class Mu extends React.Component<IAllMuProps, IMuState> {
     this.setState({
       showScoreDialog: false,
       showStalemateDialog: false,
+      showConfirmationDialog: false,
     });
   }
 
@@ -103,8 +108,21 @@ class Mu extends React.Component<IAllMuProps, IMuState> {
   }
 
   @bind
+  private handleConfirmation(answer: boolean): void {
+    if (answer) {
+      this.props.reset();
+    }
+
+    this.setState({
+      showConfirmationDialog: false,
+    });
+  }
+
+  @bind
   private handleReset(): void {
-    this.props.reset();
+    this.setState({
+      showConfirmationDialog: true,
+    });
   }
 }
 

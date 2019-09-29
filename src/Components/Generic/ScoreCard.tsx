@@ -136,7 +136,6 @@ class ScoreCard extends React.Component<IAllScoreCardProps, IScoreCardState> {
   @bind
   private handleUpdateScore(): void {
     const value = parseInt(this.state.value, 10);
-    console.log(value);
     if (!isNaN(value)) {
       this.props.addScore(this.props.name, value);
     }

@@ -7,6 +7,7 @@ import { AppState } from '../../Store';
 import * as generic from '../../Store/Generic';
 import ScoreCard from './ScoreCard';
 import { bind } from 'decko';
+import ConfirmationDialog from '../ConfirmationDialog';
 
 const localStyles = (theme: Mui.Theme) => Mui.createStyles({
   genericWrapper: {
@@ -28,7 +29,18 @@ type IAllGenericProps =
   IGenericActions &
   Mui.WithStyles<typeof localStyles>;
 
-class Generic extends React.Component<IAllGenericProps, {}> {
+interface IGenericState {
+  showConfirmationDialog: boolean;
+}
+
+class Generic extends React.Component<IAllGenericProps, IGenericState> {
+  constructor(p: IAllGenericProps) {
+    super(p);
+
+    this.state = {
+      showConfirmationDialog: false,
+    };
+  }
   public render(): JSX.Element {
     if (this.props.names.length === 0) {
       return (
@@ -44,13 +56,28 @@ class Generic extends React.Component<IAllGenericProps, {}> {
           {this.props.names.map((name) => <ScoreCard key={name} name={name} />)}
         </div>
         <Mui.Button color='primary' variant='contained' onClick={this.handleReset}>Reset All</Mui.Button>
+
+        <ConfirmationDialog onClose={this.handleConfirmation} showDialog={this.state.showConfirmationDialog}/>
       </React.Fragment>
     );
   }
 
   @bind
+  private handleConfirmation(answer: boolean): void {
+    if (answer) {
+      this.props.reset();
+    }
+
+    this.setState({
+      showConfirmationDialog: false,
+    });
+  }
+
+  @bind
   private handleReset(): void {
-    this.props.reset();
+    this.setState({
+      showConfirmationDialog: true,
+    });
   }
 }
 const mapStateToProps = (state: AppState): IGenericProps => ({
