@@ -54,17 +54,27 @@ class Mu extends React.Component<IAllMuProps, IMuState> {
   public render(): JSX.Element {
     if (this.props.names.length < 4) {
       return (
-        <Mui.Typography>
-          This game requires at least 4 players, go Home and add some more players.
-        </Mui.Typography>
+        <React.Fragment>
+          <Mui.Typography variant='h5'>
+            This tab can be used to track scores for the game of Mü.
+          </Mui.Typography>
+          <Mui.Typography variant='h6'>
+            <b>NOTE:</b> You currently have less than 4 players defined.  To add new players, click <Mui.Link color='secondary' href='/'>here</Mui.Link> to return home.  You will find the option to add and remove players at the bottom.
+          </Mui.Typography>
+        </React.Fragment>
       );
     }
 
     if (this.props.names.length > 6) {
       return (
-        <Mui.Typography>
-          This game doesn't support more than 6 players, go Home and remove some players.
-        </Mui.Typography>
+        <React.Fragment>
+          <Mui.Typography variant='h5'>
+          This tab can be used to track scores for the game of Mü.
+          </Mui.Typography>
+          <Mui.Typography variant='h6'>
+            <b>NOTE:</b> You currently have more than 6 players defined.  To remove players, click <Mui.Link color='secondary' href='/'>here</Mui.Link> to return home.  You will find the option to add and remove players at the bottom.
+          </Mui.Typography>
+        </React.Fragment>
       );
     }
 

@@ -46,9 +46,14 @@ class MilleBornes extends React.Component<IAllMilleBornesProps, IMilleBornesStat
   public render(): JSX.Element {
     if (this.props.names.length === 0) {
       return (
-        <Mui.Typography>
-          Go back to Home and add some players first!
-        </Mui.Typography>
+        <React.Fragment>
+          <Mui.Typography variant='h5'>
+            This tab can be used to track scores for the game Mille Bornes.
+          </Mui.Typography>
+          <Mui.Typography variant='h6'>
+            <b>NOTE:</b> You currently have no players defined.  To add new players, click <Mui.Link color='secondary' href='/'>here</Mui.Link> to return home.  You will find the option to add and remove players at the bottom.
+          </Mui.Typography>
+        </React.Fragment>
       );
     }
 

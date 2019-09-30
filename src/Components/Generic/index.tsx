@@ -44,9 +44,14 @@ class Generic extends React.Component<IAllGenericProps, IGenericState> {
   public render(): JSX.Element {
     if (this.props.names.length === 0) {
       return (
-        <Mui.Typography>
-          Go back to Home and add some players first!
-        </Mui.Typography>
+        <React.Fragment>
+          <Mui.Typography variant='h5'>
+            This tab can be used to track generic scores where you just add or subtract values from the player.  For example, Hearts, Five Crowns, Spades, Sticheln, or any other game.
+          </Mui.Typography>
+          <Mui.Typography variant='h6'>
+            <b>NOTE:</b> You currently have no players defined.  To add new players, click <Mui.Link color='secondary' href='/'>here</Mui.Link> to return home.  You will find the option to add and remove players at the bottom.
+          </Mui.Typography>
+        </React.Fragment>
       );
     }
 
@@ -57,7 +62,7 @@ class Generic extends React.Component<IAllGenericProps, IGenericState> {
         </div>
         <Mui.Button color='primary' variant='contained' onClick={this.handleReset}>Reset All</Mui.Button>
 
-        <ConfirmationDialog onClose={this.handleConfirmation} showDialog={this.state.showConfirmationDialog}/>
+        <ConfirmationDialog onClose={this.handleConfirmation} showDialog={this.state.showConfirmationDialog} />
       </React.Fragment>
     );
   }
