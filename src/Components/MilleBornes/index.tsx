@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as Mui from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import { bind } from 'decko';
 
 import { connect } from 'react-redux';
@@ -51,7 +52,7 @@ class MilleBornes extends React.Component<IAllMilleBornesProps, IMilleBornesStat
             This tab can be used to track scores for the game Mille Bornes.
           </Mui.Typography>
           <Mui.Typography variant='h6'>
-            <b>NOTE:</b> You currently have no players defined.  To add new players, click <Mui.Link color='secondary' href='/'>here</Mui.Link> to return home.  You will find the option to add and remove players at the bottom.
+            <b>NOTE:</b> You currently have no players defined.  To add new players, click <Link color='secondary' to='/'>here</Link> to return home.  You will find the option to add and remove players at the bottom.
           </Mui.Typography>
         </React.Fragment>
       );

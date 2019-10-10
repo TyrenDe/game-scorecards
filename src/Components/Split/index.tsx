@@ -1,5 +1,6 @@
 import * as Mui from '@material-ui/core';
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { bind } from 'decko';
@@ -50,7 +51,7 @@ class Split extends React.Component<IAllSplitProps, ISplitState> {
             This tab can be used to track scores for the game Split.
           </Mui.Typography>
           <Mui.Typography variant='h6'>
-            <b>NOTE:</b> You currently have no players defined.  To add new players, click <Mui.Link color='secondary' href='/'>here</Mui.Link> to return home.  You will find the option to add and remove players at the bottom.
+            <b>NOTE:</b> You currently have no players defined.  To add new players, click <Link color='secondary' to='/'>here</Link> to return home.  You will find the option to add and remove players at the bottom.
           </Mui.Typography>
         </React.Fragment>
       );

@@ -1,5 +1,6 @@
 import * as Mui from '@material-ui/core';
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { bind } from 'decko';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
@@ -59,7 +60,7 @@ class Mu extends React.Component<IAllMuProps, IMuState> {
             This tab can be used to track scores for the game of Mü.
           </Mui.Typography>
           <Mui.Typography variant='h6'>
-            <b>NOTE:</b> You currently have less than 4 players defined.  To add new players, click <Mui.Link color='secondary' href='/'>here</Mui.Link> to return home.  You will find the option to add and remove players at the bottom.
+            <b>NOTE:</b> You currently have less than 4 players defined.  To add new players, click <Link color='secondary' to='/'>here</Link> to return home.  You will find the option to add and remove players at the bottom.
           </Mui.Typography>
         </React.Fragment>
       );
@@ -72,7 +73,7 @@ class Mu extends React.Component<IAllMuProps, IMuState> {
           This tab can be used to track scores for the game of Mü.
           </Mui.Typography>
           <Mui.Typography variant='h6'>
-            <b>NOTE:</b> You currently have more than 6 players defined.  To remove players, click <Mui.Link color='secondary' href='/'>here</Mui.Link> to return home.  You will find the option to add and remove players at the bottom.
+            <b>NOTE:</b> You currently have more than 6 players defined.  To remove players, click <Link color='secondary' to='/'>here</Link> to return home.  You will find the option to add and remove players at the bottom.
           </Mui.Typography>
         </React.Fragment>
       );
