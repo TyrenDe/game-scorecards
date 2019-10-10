@@ -1,8 +1,8 @@
 {
   "recommendations": [
-    "aeschli.vscode-css-formatter",
-    "ms-vscode.vscode-typescript-tslint-plugin",
-    "jpoissonnier.vscode-styled-components"
+    "ms-azuretools.vscode-docker",
+    "ms-vscode-remote.remote-containers",
+    "ms-vscode.vscode-typescript-tslint-plugin"
   ],
   "unwantedRecommendations": []
 }

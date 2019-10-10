@@ -6,7 +6,7 @@ class Home extends React.Component<{}, {}> {
   public render(): JSX.Element {
     return (
       <React.Fragment>
-        <Mui.Typography>
+        <Mui.Typography variant='h5'>
           <p>Welcome to a quick and dirty way to keep track of scores on the go. This site allows you to add players, then
           track scores for those players in a variety of games.  This is designed to be lightweight and quick to use.
           It does NOT keep track of stats, players, or games across browser sessions.</p>
