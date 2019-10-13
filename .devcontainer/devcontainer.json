@@ -1,8 +1,9 @@
 {
   "name": "Node.js 10, TypeScript, React",
+  "appPort": [ 3000 ],
   "dockerFile": "Dockerfile",
   "postCreateCommand": "npm install",
   "extensions": [
-		"ms-vscode.vscode-typescript-tslint-plugin"
-	]
+    "ms-vscode.vscode-typescript-tslint-plugin"
+  ]
 }
