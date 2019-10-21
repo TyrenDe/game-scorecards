@@ -4,8 +4,8 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import { AppState } from '../../Store';
-import * as generic from '../../Store/Generic';
+import { AppState } from 'Store';
+import * as generic from 'Store/Generic';
 
 const localStyles = (theme: Mui.Theme) => Mui.createStyles({
   scoreCardPaper: {

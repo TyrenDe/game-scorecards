@@ -6,8 +6,8 @@ import { bind } from 'decko';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import { AppState } from '../../Store';
-import * as milleBornes from '../../Store/MilleBornes';
+import { AppState } from 'Store';
+import * as milleBornes from 'Store/MilleBornes';
 import ScoreCard from './ScoreCard';
 import ConfirmationDialog from '../ConfirmationDialog';
 

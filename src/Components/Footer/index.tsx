@@ -5,8 +5,8 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import { AppState } from '../../Store';
-import * as system from '../../Store/System';
+import { AppState } from 'Store';
+import * as system from 'Store/System';
 
 const localStyles = (theme: Mui.Theme) => Mui.createStyles({
   appBar: {

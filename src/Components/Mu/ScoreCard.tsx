@@ -3,7 +3,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import { AppState } from '../../Store';
+import { AppState } from 'Store';
 
 const localStyles = (theme: Mui.Theme) => Mui.createStyles({
   scoreCardPaper: {

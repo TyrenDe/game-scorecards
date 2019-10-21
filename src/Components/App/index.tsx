@@ -4,9 +4,9 @@ import { ThemeProvider } from '@material-ui/styles';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import { AppState } from '../../Store';
-import { Themes } from '../../Theme';
-import * as system from '../../Store/System';
+import { AppState } from 'Store';
+import { Themes } from 'Theme';
+import * as system from 'Store/System';
 import Header from '../Header';
 import Main from '../Main';
 

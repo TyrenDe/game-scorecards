@@ -4,8 +4,8 @@ import { bind } from 'decko';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import { AppState } from '../../Store';
-import * as mu from '../../Store/Mu';
+import { AppState } from 'Store';
+import * as mu from 'Store/Mu';
 import Trumps from './Trumps';
 import TrumpSelector from './TrumpSelector';
 

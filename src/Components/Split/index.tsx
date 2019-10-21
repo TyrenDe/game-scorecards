@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { bind } from 'decko';
 
-import { AppState } from '../../Store';
-import * as split from '../../Store/Split';
+import { AppState } from 'Store';
+import * as split from 'Store/Split';
 import ScoreCard from './ScoreCard';
 import ConfirmationDialog from '../ConfirmationDialog';
 
