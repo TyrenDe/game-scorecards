@@ -6,6 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import App from 'Components/App';
 import storeData from 'Store';
+import * as serviceWorker from 'serviceWorker';
 
 ReactDOM.render((
   <HashRouter>
@@ -16,3 +17,5 @@ ReactDOM.render((
     </Provider>
   </HashRouter>
 ), document.getElementById('root'));
+
+serviceWorker.register();

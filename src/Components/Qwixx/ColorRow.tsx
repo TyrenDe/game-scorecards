@@ -6,7 +6,6 @@ import { Dispatch } from 'redux';
 
 import { AppState } from 'Store';
 import * as qwixx from 'Store/Qwixx';
-import ColorRow from './ColorRow';
 
 const localStyles = (theme: Mui.Theme) => Mui.createStyles({
   scoreCardPaper: {
@@ -21,46 +20,41 @@ const localStyles = (theme: Mui.Theme) => Mui.createStyles({
   },
 });
 
-interface IScoreCardProps {
+interface IColorRowProps {
+  color: qwixx.QwixxRanks;
 }
 
-interface IScoreCardMappedProps {
-  values: Record<qwixx.QwixxRanks, number[]>;
+interface IColorRowMappedProps {
 }
 
-interface IScoreCardActions {
+interface IColorRowActions {
   addValue(rank: qwixx.QwixxRanks, number: number): void;
   removeValue(rank: qwixx.QwixxRanks, number: number): void;
 }
 
-type IAllScoreCardProps =
-  IScoreCardProps &
-  IScoreCardMappedProps &
-  IScoreCardActions &
+type IAllColorRowProps =
+  IColorRowProps &
+  IColorRowMappedProps &
+  IColorRowActions &
   Mui.WithStyles<typeof localStyles>;
 
-class ScoreCard extends React.Component<IAllScoreCardProps, {}> {
+class ColorRow extends React.Component<IAllColorRowProps, {}> {
   @bind
   public render(): React.ReactNode {
     return (
       <Mui.Paper className={this.props.classes.scoreCardPaper}>
-        <ColorRow color={qwixx.QwixxRanks.Red}/>
-        <ColorRow color={qwixx.QwixxRanks.Yellow}/>
-
-        <ColorRow color={qwixx.QwixxRanks.Green}/>
-        <ColorRow color={qwixx.QwixxRanks.Blue}/>
       </Mui.Paper>
     );
   }
 }
 
-const mapStateToProps = (state: AppState): IScoreCardMappedProps => ({
+const mapStateToProps = (state: AppState): IColorRowMappedProps => ({
   values: state.qwixx.values,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch): IScoreCardActions => ({
+const mapDispatchToProps = (dispatch: Dispatch): IColorRowActions => ({
   addValue: (rank: qwixx.QwixxRanks, number: number) => dispatch(qwixx.addValue(rank, number)),
   removeValue: (rank: qwixx.QwixxRanks, number: number) => dispatch(qwixx.removeValue(rank, number)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Mui.withStyles(localStyles)(ScoreCard));
+export default connect(mapStateToProps, mapDispatchToProps)(Mui.withStyles(localStyles)(ColorRow));
