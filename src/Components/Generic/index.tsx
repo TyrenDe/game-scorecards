@@ -42,7 +42,9 @@ class Generic extends React.Component<IAllGenericProps, IGenericState> {
       showConfirmationDialog: false,
     };
   }
-  public render(): JSX.Element {
+
+  @bind
+  public render(): React.ReactNode {
     if (this.props.names.length === 0) {
       return (
         <React.Fragment>

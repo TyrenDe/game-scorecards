@@ -2,6 +2,7 @@ import * as Mui from '@material-ui/core';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
+import { bind } from 'decko';
 
 import { AppState } from 'Store';
 
@@ -28,7 +29,8 @@ type IAllScoreCardProps =
   Mui.WithStyles<typeof localStyles>;
 
 class ScoreCard extends React.Component<IAllScoreCardProps, {}> {
-  public render(): JSX.Element {
+  @bind
+  public render(): React.ReactNode {
     const myScore: number = this.props.scores[this.props.name] ? this.props.scores[this.props.name] : 0;
 
     return (

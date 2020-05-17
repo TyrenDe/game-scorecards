@@ -3,6 +3,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/styles';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
+import { bind } from 'decko';
 
 import { AppState } from 'Store';
 import { Themes } from 'Theme';
@@ -15,7 +16,8 @@ interface IAppProps {
 }
 
 class App extends React.Component<IAppProps, {}> {
-  public render(): JSX.Element {
+  @bind
+  public render(): React.ReactNode {
     const currentTheme = Themes.getTheme(this.props.selectedTheme);
 
     return (

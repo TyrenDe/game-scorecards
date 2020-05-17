@@ -52,7 +52,8 @@ class ScoreCard extends React.Component<IAllScoreCardProps, IScoreCardState> {
     };
   }
 
-  public render(): JSX.Element {
+  @bind
+  public render(): React.ReactNode {
     const myScore: number = this.props.scores[this.props.name] ? this.props.scores[this.props.name] : 0;
 
     return (

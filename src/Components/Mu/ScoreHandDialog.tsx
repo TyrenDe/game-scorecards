@@ -90,7 +90,8 @@ class ScoreHandDialog extends React.Component<IAllScoreHandDialogProps, IScoreHa
     }
   }
 
-  public render(): JSX.Element {
+  @bind
+  public render(): React.ReactNode {
     return (
       <Mui.Dialog open={this.props.showDialog} maxWidth='sm' fullWidth={true} onClose={this.handleDialogClose}>
           <Mui.DialogContent>

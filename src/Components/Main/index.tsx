@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as Mui from '@material-ui/core';
 import { Switch, Route } from 'react-router-dom';
+import { bind } from 'decko';
 
 import Home from '../Home';
 import About from '../About/About';
@@ -11,7 +12,8 @@ import Qwixx from '../Qwixx';
 import Split from '../Split';
 
 class Main extends React.Component<{}, {}> {
-  public render(): JSX.Element {
+  @bind
+  public render(): React.ReactNode {
     return (
       <Mui.Box m={2}>
         <Switch>

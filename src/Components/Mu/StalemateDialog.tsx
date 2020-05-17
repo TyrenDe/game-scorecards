@@ -59,7 +59,8 @@ class StalemateDialog extends React.Component<IAllStalemateDialogProps, IStalema
     }
   }
 
-  public render(): JSX.Element {
+  @bind
+  public render(): React.ReactNode {
     return (
       <Mui.Dialog open={this.props.showDialog} maxWidth='xs' fullWidth={true} onClose={this.handleDialogClose}>
         <Mui.DialogContent>

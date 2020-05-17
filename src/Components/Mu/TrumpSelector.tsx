@@ -21,7 +21,8 @@ type IAllTrumpSelectorProps =
   Mui.WithStyles<typeof localStyles>;
 
 class TrumpSelector extends React.Component<IAllTrumpSelectorProps, {}> {
-  public render(): JSX.Element {
+  @bind
+  public render(): React.ReactNode {
     return (
       <Mui.FormControl variant='filled' className={this.props.classes.selectBox}>
         <Mui.InputLabel htmlFor='trump'>

@@ -1,12 +1,14 @@
 import * as Mui from '@material-ui/core';
 import * as React from 'react';
 import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
+import { bind } from 'decko';
 
 type IAllHeaderProps =
   RouteComponentProps<any>;
 
 class Header extends React.Component<IAllHeaderProps, {}> {
-  public render(): JSX.Element {
+  @bind
+  public render(): React.ReactNode {
     return (
       <React.Fragment>
         <nav>

@@ -87,7 +87,8 @@ class ScoreCard extends React.Component<IAllScoreCardProps, IScoreCardState> {
     };
   }
 
-  public render(): JSX.Element {
+  @bind
+  public render(): React.ReactNode {
     return (
       <React.Fragment>
         <Mui.Paper className={this.props.classes.scoreCardPaper}>

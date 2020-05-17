@@ -1,6 +1,7 @@
 import * as Mui from '@material-ui/core';
 import * as React from 'react';
 import { withStyles } from '@material-ui/styles';
+import { bind } from 'decko';
 
 const localStyles = (theme: Mui.Theme) => Mui.createStyles({
   marginTop: {
@@ -32,7 +33,8 @@ type IAllSafetyRowProps =
   Mui.WithStyles<typeof localStyles>;
 
 class SafetyRow extends React.Component<IAllSafetyRowProps, {}> {
-  public render(): JSX.Element {
+  @bind
+  public render(): React.ReactNode {
     return (
       <React.Fragment>
         <Mui.Grid item={true} xs={6} className={this.props.classes.right}>

@@ -41,7 +41,8 @@ class Split extends React.Component<IAllSplitProps, ISplitState> {
     };
   }
 
-  public render(): JSX.Element {
+  @bind
+  public render(): React.ReactNode {
     return (
       <React.Fragment>
         <div className={this.props.classes.splitWrapper}>

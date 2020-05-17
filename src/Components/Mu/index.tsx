@@ -52,7 +52,8 @@ class Mu extends React.Component<IAllMuProps, IMuState> {
     };
   }
 
-  public render(): JSX.Element {
+  @bind
+  public render(): React.ReactNode {
     if (this.props.names.length < 4) {
       return (
         <React.Fragment>

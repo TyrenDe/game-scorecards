@@ -53,7 +53,8 @@ class Footer extends React.Component<IAllFooterProps, IFooterState> {
     };
   }
 
-  public render(): JSX.Element {
+  @bind
+  public render(): React.ReactNode {
     return (
       <React.Fragment>
         <Mui.AppBar position='fixed' className={this.props.classes.appBar}>

@@ -41,7 +41,8 @@ class Qwixx extends React.Component<IAllQwixxProps, IQwixxState> {
     };
   }
 
-  public render(): JSX.Element {
+  @bind
+  public render(): React.ReactNode {
     return (
       <React.Fragment>
         <div className={this.props.classes.qwixxWrapper}>

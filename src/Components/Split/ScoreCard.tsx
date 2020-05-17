@@ -76,7 +76,8 @@ const ValueMap: Record<split.SplitRanks, number[]> = {
 class ScoreCard extends React.Component<IAllScoreCardProps, {}> {
   private readonly ScoreName: string = 'SplitScore';
 
-  public render(): JSX.Element {
+  @bind
+  public render(): React.ReactNode {
     const myScore: split.ISplitScore = this.props.scores[this.ScoreName];
 
     return (

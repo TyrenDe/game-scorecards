@@ -1,9 +1,11 @@
 import * as React from 'react';
 import * as Mui from '@material-ui/core';
 import Footer from '../Footer';
+import { bind } from 'decko';
 
 class Home extends React.Component<{}, {}> {
-  public render(): JSX.Element {
+  @bind
+  public render(): React.ReactNode {
     return (
       <React.Fragment>
         <Mui.Typography variant='h5'>
