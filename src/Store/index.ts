@@ -8,6 +8,7 @@ import { milleBornesReducer } from './MilleBornes/Reducers';
 import { muReducer } from './Mu/Reducers';
 import { splitReducer } from './Split/Reducers';
 import { systemReducer } from './System/Reducers';
+import { qwixxReducer } from './Qwixx/Reducers';
 
 const persistConfig = {
   key: 'root',
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   generic: genericReducer,
   milleBornes: milleBornesReducer,
   mu: muReducer,
+  qwixx: qwixxReducer,
   split: splitReducer,
   system: systemReducer,
 });

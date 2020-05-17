@@ -7,6 +7,7 @@ import About from '../About/About';
 import Generic from '../Generic';
 import MilleBornes from '../MilleBornes';
 import Mu from '../Mu';
+import Qwixx from '../Qwixx';
 import Split from '../Split';
 
 class Main extends React.Component<{}, {}> {
@@ -15,11 +16,12 @@ class Main extends React.Component<{}, {}> {
       <Mui.Box m={2}>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/split' component={Split} />
-          <Route path='/millebornes' component={MilleBornes} />
-          <Route path='/mu' component={Mu} />
-          <Route path='/generic' component={Generic} />
-          <Route path='/about' component={About} />
+          <Route exact path='/split' component={Split} />
+          <Route exact path='/millebornes' component={MilleBornes} />
+          <Route exact path='/mu' component={Mu} />
+          <Route exact path='/qwixx' component={Qwixx} />
+          <Route exact path='/generic' component={Generic} />
+          <Route exactpath='/about' component={About} />
         </Switch>
       </Mui.Box>
     );

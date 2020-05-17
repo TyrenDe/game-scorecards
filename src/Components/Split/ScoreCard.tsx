@@ -38,7 +38,6 @@ const localStyles = (theme: Mui.Theme) => Mui.createStyles({
 });
 
 interface IScoreCardProps {
-  name: string;
 }
 
 interface IScoreCardMappedProps {
@@ -75,18 +74,20 @@ const ValueMap: Record<split.SplitRanks, number[]> = {
 };
 
 class ScoreCard extends React.Component<IAllScoreCardProps, {}> {
+  private readonly ScoreName: string = 'SplitScore';
+
   public render(): JSX.Element {
-    const myScore: split.ISplitScore = this.props.scores[this.props.name];
+    const myScore: split.ISplitScore = this.props.scores[this.ScoreName];
 
     return (
       <Mui.Paper className={this.props.classes.scoreCardPaper}>
         <Mui.Grid container={true}>
-          <Mui.Grid item={true} xs={6}>
+          <Mui.Grid item={true} xs={6} className={this.props.classes.right}>
             <Mui.Typography variant='h5'>
-              {this.props.name}
+              Total:
             </Mui.Typography>
           </Mui.Grid>
-          <Mui.Grid item={true} xs={6} className={this.props.classes.right}>
+          <Mui.Grid item={true} xs={6} className={this.props.classes.center}>
             <Mui.Typography variant='h5'>
               {this.calculateScore(myScore)}
             </Mui.Typography>
@@ -156,12 +157,12 @@ class ScoreCard extends React.Component<IAllScoreCardProps, {}> {
 
   @bind
   private handleIncrease(rank: split.SplitRanks): void {
-    this.props.addValue(this.props.name, rank);
+    this.props.addValue(this.ScoreName, rank);
   }
 
   @bind
   private handleDecrease(rank: split.SplitRanks): void {
-    this.props.removeValue(this.props.name, rank);
+    this.props.removeValue(this.ScoreName, rank);
   }
 
   @bind

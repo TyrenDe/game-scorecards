@@ -16,6 +16,7 @@ class Header extends React.Component<IAllHeaderProps, {}> {
               <Mui.Tab value='/split' label='Split' to='/split' component={Link} />
               <Mui.Tab value='/millebornes' label='Mille Bornes' to='/millebornes' component={Link} />
               <Mui.Tab value='/mu' label='Mü' to='/mu' component={Link} />
+              <Mui.Tab value='/qwixx' label='Qwixx' to='/qwixx' component={Link} />
               <Mui.Tab value='/generic' label='Generic' to='/generic' component={Link} />
               <Mui.Tab value='/about' label='About' to='/about' component={Link} />
             </Mui.Tabs>

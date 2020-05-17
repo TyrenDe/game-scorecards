@@ -5,35 +5,35 @@ import { Dispatch } from 'redux';
 import { bind } from 'decko';
 
 import { AppState } from 'Store';
-import * as split from 'Store/Split';
+import * as qwixx from 'Store/Qwixx';
 import ScoreCard from './ScoreCard';
 import ConfirmationDialog from '../ConfirmationDialog';
 
 const localStyles = (theme: Mui.Theme) => Mui.createStyles({
-  splitWrapper: {
+  qwixxWrapper: {
     display: 'flex',
     flexWrap: 'wrap',
   },
 });
 
-interface ISplitProps {
+interface IQwixxProps {
 }
 
-interface ISplitActions {
+interface IQwixxActions {
   reset(): void;
 }
 
-type IAllSplitProps =
-  ISplitProps &
-  ISplitActions &
+type IAllQwixxProps =
+  IQwixxProps &
+  IQwixxActions &
   Mui.WithStyles<typeof localStyles>;
 
-interface ISplitState {
+interface IQwixxState {
   showConfirmationDialog: boolean;
 }
 
-class Split extends React.Component<IAllSplitProps, ISplitState> {
-  constructor(p: IAllSplitProps) {
+class Qwixx extends React.Component<IAllQwixxProps, IQwixxState> {
+  constructor(p: IAllQwixxProps) {
     super(p);
 
     this.state = {
@@ -44,7 +44,7 @@ class Split extends React.Component<IAllSplitProps, ISplitState> {
   public render(): JSX.Element {
     return (
       <React.Fragment>
-        <div className={this.props.classes.splitWrapper}>
+        <div className={this.props.classes.qwixxWrapper}>
           <ScoreCard />
         </div>
         <Mui.Button color='primary' variant='contained' onClick={this.handleReset}>Reset All</Mui.Button>
@@ -71,11 +71,11 @@ class Split extends React.Component<IAllSplitProps, ISplitState> {
     });
   }
 }
-const mapStateToProps = (state: AppState): ISplitProps => ({
+const mapStateToProps = (state: AppState): IQwixxProps => ({
 });
 
-const mapDispatchToProps = (dispatch: Dispatch): ISplitActions => ({
-  reset: () => dispatch(split.resetAll()),
+const mapDispatchToProps = (dispatch: Dispatch): IQwixxActions => ({
+  reset: () => dispatch(qwixx.resetAll()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Mui.withStyles(localStyles)(Split));
+export default connect(mapStateToProps, mapDispatchToProps)(Mui.withStyles(localStyles)(Qwixx));
