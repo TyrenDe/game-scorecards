@@ -11,8 +11,8 @@ import * as qwixx from 'Store/Qwixx';
 
 const localStyles = (theme: Mui.Theme) => Mui.createStyles({
   scoreCardPaper: {
-    margin: theme.spacing(1),
-    padding: theme.spacing(1),
+    margin: theme.spacing(0),
+    padding: theme.spacing(0),
   },
   right: {
     textAlign: 'right',
@@ -163,9 +163,11 @@ class ColorRow extends React.Component<IAllColorRowProps, {}> {
     const icon = this.props.isLocked[this.props.color] ? <LockIcon/> : <LockOpenIcon/>;
 
     return (
-      <Mui.Button className={this.props.classes.button} onClick={() => this.toggleLock()}>
-        { icon }
-      </Mui.Button>
+      <Mui.Grid item={true} xs={1}>
+        <Mui.Button style={{marginTop: 6}} className={this.props.classes.button} onClick={() => this.toggleLock()}>
+          { icon }
+        </Mui.Button>
+      </Mui.Grid>
     );
   }
 
@@ -233,6 +235,11 @@ class ColorRow extends React.Component<IAllColorRowProps, {}> {
 
   @bind
   private removeValue(index: number): void {
+    if (this.props.isLocked[this.props.color]) {
+      // Can't do this if it's locked!
+      return;
+    }
+
     this.props.removeValue(this.props.color, index);
   }
 }
