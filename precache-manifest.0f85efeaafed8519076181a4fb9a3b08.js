@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4dde222543f19ef1d28836e85625bd9a",
+    "revision": "ed44a9f9fae27715d8fa0cf9df740082",
     "url": "/game-scorecards/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/game-scorecards/static/js/2.3cf64efb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a3cdee8eafc5a0633e9d",
-    "url": "/game-scorecards/static/js/main.2b02eb79.chunk.js"
+    "revision": "78bfd715ad62947fc91f",
+    "url": "/game-scorecards/static/js/main.3518a528.chunk.js"
   },
   {
     "revision": "2d4f8f21347da46f2109",
