@@ -11,7 +11,7 @@ import { systemReducer } from './System/Reducers';
 import { qwixxReducer } from './Qwixx/Reducers';
 
 const persistConfig = {
-  key: 'root',
+  key: 'root-v2',
   storage,
 };
 

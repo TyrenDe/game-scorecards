@@ -44,11 +44,27 @@ class ScoreCard extends React.Component<IAllScoreCardProps, {}> {
   public render(): React.ReactNode {
     return (
       <Mui.Paper className={this.props.classes.scoreCardPaper}>
-        <ColorRow color={qwixx.QwixxRanks.Red}/>
-        <ColorRow color={qwixx.QwixxRanks.Yellow}/>
+        <Mui.Grid container={true}>
+          <Mui.Grid item={true} xs={12}>
+            <ColorRow color={qwixx.QwixxRanks.Red} />
+          </Mui.Grid>
 
-        <ColorRow color={qwixx.QwixxRanks.Green}/>
-        <ColorRow color={qwixx.QwixxRanks.Blue}/>
+          <Mui.Grid item={true} xs={12}>
+            <ColorRow color={qwixx.QwixxRanks.Yellow} />
+          </Mui.Grid>
+
+          <Mui.Grid item={true} xs={12}>
+            <ColorRow color={qwixx.QwixxRanks.Green} />
+          </Mui.Grid>
+
+          <Mui.Grid item={true} xs={12}>
+            <ColorRow color={qwixx.QwixxRanks.Blue} />
+          </Mui.Grid>
+
+          <Mui.Grid item={true} xs={12}>
+            <ColorRow color={qwixx.QwixxRanks.Negative} />
+          </Mui.Grid>
+        </Mui.Grid>
       </Mui.Paper>
     );
   }
