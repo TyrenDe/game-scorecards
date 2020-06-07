@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/game-scorecards/static/js/main.3518a528.chunk.js",
-    "main.js.map": "/game-scorecards/static/js/main.3518a528.chunk.js.map",
-    "runtime-main.js": "/game-scorecards/static/js/runtime-main.1df443f8.js",
-    "runtime-main.js.map": "/game-scorecards/static/js/runtime-main.1df443f8.js.map",
-    "static/js/2.3cf64efb.chunk.js": "/game-scorecards/static/js/2.3cf64efb.chunk.js",
-    "static/js/2.3cf64efb.chunk.js.map": "/game-scorecards/static/js/2.3cf64efb.chunk.js.map",
+    "main.js": "/game-scorecards/static/js/main.7002935e.chunk.js",
+    "main.js.map": "/game-scorecards/static/js/main.7002935e.chunk.js.map",
+    "runtime-main.js": "/game-scorecards/static/js/runtime-main.2fb3860d.js",
+    "runtime-main.js.map": "/game-scorecards/static/js/runtime-main.2fb3860d.js.map",
+    "static/js/2.a652191a.chunk.js": "/game-scorecards/static/js/2.a652191a.chunk.js",
+    "static/js/2.a652191a.chunk.js.map": "/game-scorecards/static/js/2.a652191a.chunk.js.map",
     "index.html": "/game-scorecards/index.html",
-    "precache-manifest.0f85efeaafed8519076181a4fb9a3b08.js": "/game-scorecards/precache-manifest.0f85efeaafed8519076181a4fb9a3b08.js",
+    "precache-manifest.243c7e0dc74f2cf0cc3a74c8d3aa65e1.js": "/game-scorecards/precache-manifest.243c7e0dc74f2cf0cc3a74c8d3aa65e1.js",
     "service-worker.js": "/game-scorecards/service-worker.js",
-    "static/js/2.3cf64efb.chunk.js.LICENSE.txt": "/game-scorecards/static/js/2.3cf64efb.chunk.js.LICENSE.txt"
+    "static/js/2.a652191a.chunk.js.LICENSE.txt": "/game-scorecards/static/js/2.a652191a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.1df443f8.js",
-    "static/js/2.3cf64efb.chunk.js",
-    "static/js/main.3518a528.chunk.js"
+    "static/js/runtime-main.2fb3860d.js",
+    "static/js/2.a652191a.chunk.js",
+    "static/js/main.7002935e.chunk.js"
   ]
 }
